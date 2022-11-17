@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* Style Sheet */
+	h1 {
+		color: #392f31;
+		background: #f5f5dc;
+	}
+
+	p {
+		color: #0080ff;
+		background: #003458;
+	}
