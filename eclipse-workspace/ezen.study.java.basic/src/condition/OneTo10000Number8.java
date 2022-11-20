@@ -3,50 +3,61 @@ package condition;
 public class OneTo10000Number8 {
 
 	public static void main(String[] args) {
-		// 1부터 10,000까지의 정수에는 8이라는 숫자가 총 몇 번나오나요?
-		// 888 => 3번, 8080 => 2번
-		// 답 : 4000번
+		// 1부터 10000까지의 정수에는 8이 몇개인가?
 		
-		int	number8	= 0;	// 8이라는 숫자의 갯수를 누적시키는 변수
-		int	wonbon	= 0;	// 작업대상이 되는 수를 임시로 저장하는 변수
-		
-		for(int num = 1; num <= 10000; num++) {
-			wonbon = num;	// 작업대상이 되는 수(num)를 변수에 저장한다.
+		int imsi = 0;
+		int number8 = 0;
+		for(int wonbon = 1 ; wonbon <=10000; wonbon++) {
+			int a = wonbon;
 			
-			while(num >= 10) {
-				if(num % 10 == 8) {
+			while(wonbon != 0) {				
+				imsi = wonbon % 10;
+				wonbon = wonbon / 10;
+				if(imsi == 8) {
 					number8++;
-					num /= 10;
+				}				
+			}
+			wonbon = a;
+			
+		}
+		System.out.println(number8);
+		
+		int num8 = 0;
+		int won = 0;
+		
+		for(int i = 1; i <= 10000; i++) {
+			won = i;
+			while(i>=10) {
+				if(i % 10 == 8) {
+					num8++;
+					i /= 10;
 				} else {
-					num /= 10;
+					i /= 10;
 				}
 			}
-			if(num == 8) { // 1단위에는 8이 오직 하나만 존재한다.
-				number8++;
+			if(i == 8) {
+				num8++; // 1단위에는 8이 하나만 존재하니까 따로 뺀다.
 			}
-			// 하나의 숫자(num)에 대한 작업이 끝나면 원래 값으로 돌려놓는다.
-			num = wonbon; 
-		} // End - for
-		System.out.println("1 ~ 10,000까지 나오는 8의 개수 : " + number8);
+			i = won;
+		}
+		System.out.println(num8);
+		System.out.println("====================================");
 		
-		System.out.println("==============================================");
+		num8 = 0;
+		won = 0;
 		
-		wonbon = 0; number8 = 0;
 		for(int num = 1; num <= 10000; num++) {
-			wonbon = num;
+			won = num;
 			while(num > 0) {
 				if(num % 10 == 8) {
-					number8++;
+					num8++;
 				}
 				num /= 10;
 			}
-			num = wonbon;
+			num = won;
 		}
-		System.out.println("1 ~ 10,000까지 나오는 8의 개수 : " + number8);
+		System.out.println(num8);
 
-	} // End - public static void main(String[] args)
+	}
 
-} // End - public class OneTo10000Number8
-
-
-
+}
