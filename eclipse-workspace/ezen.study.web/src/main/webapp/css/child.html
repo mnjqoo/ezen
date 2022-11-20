@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>child.html</title>
+		<style>
+			#main > div {
+				border: 3px solid red;
+			}
+			ol > li {
+				list-style-type: square;
+				font-weight: bold;
+				color: #01DFA5;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<h1>Child Combinator: 자식 선택자</h1>
+		<p>선행 선택자인 부모요소 하위에 포함된 후행 선택자인 자식요소를 선택하는 방법입니다.</p>
+		<div id="main">
+			<div>
+				#main의 자식 요소
+				<div>
+					#main에 포함된 하위 요소
+				</div>
+			</div>
+		</div>
+		<hr>
+		<ol>
+			<li>첫번째 목록
+				<ul>
+					<li>첫번째 하위 목록 1</li>
+					<li>첫번째 하위 목록 2</li>
+				</ul>
+			</li>
+			<li>두번째 목록
+				<ul>
+					<li>두번째 하위 목록1</li>
+					<li>두번째 하위 목록2</li>
+				</ul>
+			</li>
+			<li>세번째 목록
+				<ul>
+					<li>세번째 하위 목록1</li>
+					<li>세번째 하위 목록2</li>
+				</ul>
+			</li>
+		</ol>
+	</body>
+	<!-- 하위 요소로 스타일 지정을 하면 하위 요소 하나하나마다 지정된다. 
+	자식 선택자를 사용하면 첫번째(?) 하위 요소를 한번에 지정 할 수 있다. -->
+</html>

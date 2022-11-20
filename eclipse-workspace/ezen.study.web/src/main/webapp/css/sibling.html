@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>sibling.html</title>
+	</head>
+	<style>
+		h2 + p {
+			color: #2EFE64;
+		}
+		h3 ~ p {
+			color: #FF00BF;
+		}
+	</style>
+	<body>
+		<h1>General Sibling Combinator(기본 형제 선택자)</h1>
+		<h2>선행 선택자 뒤의 후행 선택자 선택한다.</h2>
+		<p>기본 형제 선택자는 선행 선택자와 후행선택자를 "+"로 구분하여 선언합니다.</p>
+		<p>기본 형제 선택자는 선행 선택자와 후행선택자를 "+"로 구분하여 선언합니다.</p>
+		<h1>Adjacent Sibling Combinator(인접 형제 선택자)</h1>
+		<h3>선행 선택자 뒤에 인접하여 등장하는 모든 후행 선택자를 선택한다.</h3>
+		<p>인접 형제 선택자는 선행 선택자와 후행선택자를 "~"로 구분하여 선언합니다.</p>
+		<p>인접 형제 선택자는 선행 선택자와 후행선택자를 "~"로 구분하여 선언합니다.</p>
+	</body>
+</html>

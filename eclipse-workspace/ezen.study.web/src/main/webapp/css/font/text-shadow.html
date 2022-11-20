@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>text-shadow.html</title>
+	</head>
+	<style>
+		p {
+			color: rgb(5, 77, 74);
+			font-weight: bold;
+			font-size: 80px;
+			font-family: Helvetica, Arial, sans-serif;
+			margin: 30px;
+		}
+		.shadow1 { /* x축, y축, blur, color*/
+			text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8); 
+		}
+		.shadow2 {
+			text-shadow: 1px 5px 7px #38610B, 1px 5px 14px #38610B, 1px 5px 21px #00FFFF, 1px 5px 28px #00FFFF, 1px 5px 35px #8A0829, 1px 5px 42px #8A0829;
+		}
+		.shadow3{
+			text-shadow: 1px 0px 0px #000, 0px 1px 0px #000, -1px 0px 0px #000, 0px -1px 0px #000; 
+		}
+		.shadow4 { 
+			color: #FFFFFF;
+			background: #232323;
+			text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+			color: #FFFFFF;
+			background: #232323;
+		}
+	</style>
+	<body>
+		<h1>text-shadow 속성</h1>
+		<p class="shadow1">TEXT</p>
+		<p class="shadow2">TEXT</p>
+		<p class="shadow3">TEXT</p>
+		<p class="shadow4">TEXT</p>
+	</body>
+</html>

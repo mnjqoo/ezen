@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>display.html here</title> 
+	</head>
+	<style> 
+		p, span {
+			border: #D8F781 solid 2px;
+			padding: 5px;
+		}
+		.block {
+			display: block;
+		}
+		.inline {
+			display: inline;
+		}
+		.inline-block {
+			display: inline-block;
+			width: 200px;
+		}
+		.none {
+			display: none;
+		}
+		.run-in {
+			display: run-in;
+		}
+		.list-item {
+			list-style-type: disc;
+			display: list-item;
+			margin-left: 2em;
+		}
+		.table {
+			display: table;
+		}
+		.table-caption {
+			display: table-caption;
+			width: 400px;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		.table-row {
+			display: table-row;
+		}
+		.table-header {
+			display: table-header;
+			width: 200px;
+			text-align: center;
+			margin-right: 10px;
+			padding: 10px;
+			border: 2px solid #00f;
+		}
+		.table-cell {
+			display: table-cell;
+		}
+		hr {
+			margin: 15px o; /*2개의 값만 적으면 (상,하)(좌,우) */
+		}
+		
+	</style>
+	<body>
+		<h1>display 속성</h1> <!--display: 요소의 종류(inline, block)를 선택하는 속성  -->
+		<p class="block">
+			block
+		</p>
+		<hr>
+		<div class="inline">
+			<span>inline</span>
+			<span>inline</span>
+		</div>
+		<hr>
+		<p class="inline-block">
+			inline-block
+		</p>
+		<hr>
+		<p class="none">
+			none
+		</p>
+		<div>
+			<div class="run-in">run-in box</div>
+			<span>형제 요소가 인라인 박스인 경우</span>
+		</div>
+		<hr>
+		<div>
+			<div class="list-item">목록 항목 입니다.</div>
+			<div class="list-item">목록 항목 입니다.</div>
+		</div>
+		<hr>
+		<div class="table">
+			<div class="table-caption">테이블 캡션으로 변환</div>
+			<div class="table-row">
+				<div class= "table-header">테이블 제목셀로 변환</div>
+				<div class= "table-cell">테이블 내용셀로 변환</div>
+			</div>
+		</div>
+	</body>
+	<!-- display 속성값이 블록(block)인 요소는 언제나 새로운 라인(line)에서 시작하며, 
+	해당 라인의 모든 너비를 차지합니다.
+	ex) <div>, <h1>, <p>, <ul>, <ol>, <form> -->
+	
+	<!-- display 속성값이 인라인(inline)인 요소는 새로운 라인(line)에서 시작하지 않습니다.
+	또한, 요소의 너비도 해당 라인 전체가 아닌 해당 HTML 요소의 내용(content)만큼만 차지합니다.
+	ex) <span>, <a>, <img> -->
+	
+	<!-- display 속성값이 블록인 요소의 속성값을 인라인으로 바꿀 수 있습니다.
+	또한, 반대로 display 속성값이 인라인인 요소의 속성값을 블록으로 바꿀 수도 있습니다. -->
+	
+	<!-- 인라인-블록(inline-block) :
+	인라인과 블록 이외에도 display 속성에 자주 사용되는 속성값에는 인라인-블록(inline-block)이 있습니다.
+	display 속성값이 인라인-블록으로 설정된 요소는 해당 요소 자체는 인라인(inline) 요소처럼 동작합니다.
+	하지만 해당 요소 내부에서는 블록(block) 요소처럼 동작합니다.
+	이처럼 인라인-블록 요소는 인라인 요소와 비슷하지만, 너비와 높이를 설정할 수 있습니다.
+	또한, 블록 요소처럼 margin을 이용하여 여백을 지정할 수도 있게 됩니다. -->
+</html>

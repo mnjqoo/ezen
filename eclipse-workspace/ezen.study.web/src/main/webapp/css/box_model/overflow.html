@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>overflow.html</title>
+		<style>
+			p {
+				position: absolute;
+				box-sizing: border-box;
+				width: 200px;
+				height: 150px;
+				padding: 5px 20px;
+				background: #CCC;
+				border: #F00 solid 3px;
+			}
+			.hidden {
+				overflow: hidden;
+			}
+			.scroll {
+				left: 240px;
+				overflow: scroll;
+			}
+			.overflow-y {
+				left: 480px; 
+				overflow-y: scroll; 
+			}
+		</style>
+	</head>
+	<body>
+		<h1>overflow 속성</h1>
+		<p class="hidden">
+			overflow는 컨텐츠가 요소의 컨텐츠 영역을 벗어나는 경우 처리방법을 지정하는 속성이다.
+			overflow 속성을 방향별로 지정하기 위한 상세속성 overflow-X, overflow-Y를 사용할 수 있다.
+		</p>
+		<p class="scroll">
+			overflow는 컨텐츠가 요소의 컨텐츠 영역을 벗어나는 경우 처리방법을 지정하는 속성이다.
+			overflow 속성을 방향별로 지정하기 위한 상세속성 overflow-X, overflow-Y를 사용할 수 있다.
+		</p>
+		<p class="overflow-y">
+			overflow는 컨텐츠가 요소의 컨텐츠 영역을 벗어나는 경우 처리방법을 지정하는 속성이다.
+			overflow 속성을 방향별로 지정하기 위한 상세속성 overflow-X, overflow-Y를 사용할 수 있다.
+		</p>
+	</body>
+</html>
