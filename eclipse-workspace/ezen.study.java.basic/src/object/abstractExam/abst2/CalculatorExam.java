@@ -1,11 +1,11 @@
 package object.abstractExam.abst2;
-
-//-----------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 abstract class Calculator {
 	int left, right;
+	
 	public void setOprands(int left, int right) {
-		this.left	= left;
-		this.right	= right;
+		this.left = left;
+		this.right = right;
 	}
 	public abstract void calculate();
 	public abstract void avg();
@@ -13,53 +13,46 @@ abstract class Calculator {
 		calculate();
 		avg();
 	}
-} // End - abstract class Calculator
-//-----------------------------------------------------------------------------------------------------------
-class Plus extends Calculator {
+}
+//----------------------------------------------------------------------------
+class Plus extends Calculator{
+
+	@Override
 	public void calculate() {
-		System.out.println("더하기 : " + (this.left + this.right));
+		System.out.println("더하기: " + (this.left + this.right));
 	}
+	@Override
 	public void avg() {
-		System.out.println("평  균 : " + (this.left + this.right)/2);
+		System.out.println("평균: " + (this.left + this.right) / 2);
 	}
-} // End - class Plus extends Calculator
-//-----------------------------------------------------------------------------------------------------------
-class Minus extends Calculator {
+	
+}
+//----------------------------------------------------------------------------
+class Minus extends Calculator{
+
+	@Override
 	public void calculate() {
-		System.out.println("빼  기 : " + (this.left - this.right));
+		System.out.println("빼기: " + (this.left - this.right));
 	}
+	@Override
 	public void avg() {
-		System.out.println("평  균 : " + (this.left + this.right)/2);
+		System.out.println("평균: " + (this.left + this.right) / 2);
 	}
-} // End - class Minus extends Calculator
-//-----------------------------------------------------------------------------------------------------------
-// public class CalculatorExam
-//-----------------------------------------------------------------------------------------------------------
+	
+}
+//----------------------------------------------------------------------------
 public class CalculatorExam {
+
 	public static void main(String[] args) {
-		Plus 	pl	= new Plus();
-		pl.setOprands(10, 20);
-		pl.go();
+		Plus p1 = new Plus();
+		p1.setOprands(10, 20);
+		p1.go();
 		
-		Minus	mi	= new Minus();
-		mi.setOprands(40, 20);
-		mi.go();
+		Minus m1 = new Minus();
+		m1.setOprands(20, 10);
+		m1.go();
+
 	}
-} // End - public class CalculatorExam
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+//----------------------------------------------------------------------------

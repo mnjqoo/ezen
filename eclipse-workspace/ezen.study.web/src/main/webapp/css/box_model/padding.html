@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>padding.html</title>
+		<style>
+			div {
+				display: inline-block;
+				background: #CCC;
+				border: #F00 solid 3px;
+			}
+			
+			p {
+				margin: 0px;
+				width: 160px;
+				height: 80px;
+				border: #333 solid 2px;
+				text-align: center;
+				line-height: 70px;
+				vertical-align: middle;
+				background: #FFC;
+			}
+			
+			.padding1 {
+				padding: 10px;
+				margin-right: 20px;
+			}
+			.padding2 {
+				padding: 10px 20px; /* 상하, 좌우*/
+				margin-right: 20px;
+			}
+			.padding3 {
+				padding: 10px 20px 30px; /* 상, 좌우, 하*/
+				margin-right: 20px;
+			}
+			.padding4 {
+				padding: 10px 20px 30px 40px; /* 상, 우, 하, 좌*/
+				margin-right: 20px;
+			}
+			.padding5 {
+				padding-top: 10px;
+				padding-right: 20px;
+				padding-bottom: 30px;
+				padding-left: 40px;
+				margin-right: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>padding 속성</h1>
+		<div class="padding1">
+			<p>
+				컨텐츠 영역
+			</p>
+		</div>
+		<div class="padding2">
+			<p>
+				컨텐츠 영역
+			</p>
+		</div>
+		<div class="padding3">
+			<p>
+				컨텐츠 영역
+			</p>
+		</div>
+		<div class="padding4">
+			<p>
+				컨텐츠 영역
+			</p>
+		</div>
+		<div class="padding5">
+			<p>
+				컨텐츠 영역
+			</p>
+		</div>
+	</body>
+</html>

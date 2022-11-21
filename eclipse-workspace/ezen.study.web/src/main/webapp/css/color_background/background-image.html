@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>background-image.html</title>
+		<style>
+			p {
+				width: 400px;
+				height: 400px;
+				padding: 20px;
+				font-weight: bold;
+				border: 1px solid #000;
+				background-repeat: no-repeat; /*반복적으로 나타나는 것을 해제한다.*/	
+				background-size: 100px 100px, 200px 100px, 400px 300px;
+				background-position: 180px 50px, 200px 30px, right bottom;    
+			}
+			.back_image {
+				background-image: url(images/sun.png), url(images/cloud.png), url(images/tree.jpg);
+			}
+		</style>
+	</head>
+	<body>
+		<h1>background-image 속성</h1>
+		<h3>요소 박스에 배경 이미지를 지정합니다.</h3>
+		<h3>CSS3에서는 하나의 요소 박스에 여러개의 배경 이미지를 지정할 수 있습니다.</h3> <!-- CSS3는 이전 버전 CSS와 완전히 호환되는 CSS의 최신 표준 권고안입니다. -->
+		<p class="back_image">
+			다중 배경 이미지 적용
+			
+		</p>
+	</body>
+</html>

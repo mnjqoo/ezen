@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>background-origin.html</title>
+		<style>
+			div {
+				width: 100px;
+				height: 50px;
+				font-weight: bold;
+				padding: 20px;
+				border: rgba(100, 100, 100, 0.5) solid 15px;
+				background-image: url(images/rabbit.png);
+				background-repeat: no-repeat;
+				margin: 20px 50px;
+				float: left; 
+				position: relative;
+			}
+			span {
+				position: absolute;
+				top: -40px;  
+			}
+			.border-box {
+				background-origin: border-box; /* border 포함 영역의 왼쪽 위부터*/
+				background-size: 50px 50px;
+			}
+			.padding-box {
+				background-origin: padding-box; /* padding 포함 영역의 왼쪽 위부터*/
+				background-size: 50px 50%;
+			}
+			.content-box {
+				background-origin: content-box;  /* content 영역의 왼쪽 위부터*/
+				background-size: 70px 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>background-origin 속성</h1>
+		<div class="border-box"> 
+			<span>border-box</span>
+		</div>
+		<div class="padding-box"> 
+			<span>padding-box</span>
+		</div>
+		<div class="content-box"> 
+			<span>content-box</span>
+		</div>
+	</body>
+</html>
