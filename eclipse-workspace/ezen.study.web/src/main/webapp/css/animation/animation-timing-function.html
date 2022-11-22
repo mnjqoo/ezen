@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>animation-timing-function.html</title>
+		<style>
+			@keyframes ani_1 {
+				from {
+					left: 10px;
+				}
+				to {
+					left: 800px; 
+					transform: rotateX(360deg); /*X축 기준으로 회전*/
+				}
+			}
+			.animation_div {
+				position: relative;
+				left: 450px;
+				margin-bottom: 10px;
+				padding-top: 55px;
+				text-align: center;
+				width: 100px;
+				height: 10px;
+				background: url(../images/p.png) top left no-repeat;
+				background-size: contain;
+				animation-duration: 5s;
+				animation-name: ani_1;
+			}
+			.ease {
+				animation-timing-function: ease;
+			}
+			.linear {
+				animation-timing-function: linear;
+			}
+			.ease-in {
+				animation-timing-function: ease-in;
+			}
+			.ease-out {
+				animation-timing-function: ease-out;
+			}.ease-in-out {
+				animation-timing-function: ease-in-out;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>animation-timing-function 속성</h1>
+		<h3>애니메이션 진행 속도의 변화 형태를 지정하는 속성이다.</h3>
+		<div class="animation_div ease">ease</div>
+		<div class="animation_div linear">linear</div>
+		<div class="animation_div ease-in">ease-in</div>
+		<div class="animation_div ease-out">ease-out</div>
+		<div class="animation_div ease-in-out">ease-in-out</div>
+	</body>
+</html>

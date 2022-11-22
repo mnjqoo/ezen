@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>clear.html</title>
+		<style>
+			div {
+				width: 550px;
+				border: #666 solid 3px;
+				padding: 10px;
+			}
+			img {
+				 border: #999 solid 1px;
+			}
+			p {
+				background: #FFFF00;
+			}
+			.cloud {
+				width: 100px;
+				height: 50px;
+				float: right; 
+			}
+			.sun {
+				width: 70px;
+				height: 50px;
+				float: left;
+			}
+			.rabbit {
+				width: 100px;
+				height: 100px;
+				float: left;
+			}
+			.clear_right {
+				clear: right;
+			}
+			.clear_left {
+				clear: left;
+			}
+			.clear_both {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>clear속성</h1>
+		<h3>float 속성의 선언으로 요소의 배치 위치에 영향을 받게 된 경우,
+			이를 해제하고자 할 때 사용하는 속성이다.</h3>
+		<div>
+			<img class="cloud" src = "../images/cloud.png" alt="구름">
+			<p class="clear_right">
+				싱그러운 아침 창가에 나의 얼굴을 비추며 <br/>
+				예쁜 해님 나를 보며 방긋방긋이 웃어주네
+			</p>
+			<img class="sun" src = "../images/sun.png" alt="해님">
+			<p class="clear_left">
+				산토끼 토끼야 어디를 가느냐 <br/>
+				깡충깡충 뛰면서 어디를 가느냐
+			</p>
+			<img class="rabbit" src = "../images/rabbit.png" alt="토끼">
+			<p>
+				따르릉 따르릉 비켜나세요. 자전거가 나갑니다. 따르르르릉 <br/>
+				저기가는 저 사람 조심하세요. 우물쭈물 하다가는 큰일납니다.
+			</p>
+			<p class="clear_both">
+				따르릉 따르릉 이 자전거는 울아버지 장에 갔다 돌아오실 때 <br/>
+				꼬부랑 꼬부랑 고개를 넘어 비탈길로 스르르르 타고 온다오.
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>keyframes.html</title>
+		<style>
+			@keyframes ani_1 {
+				 from {
+				 	width: 100px;
+				 	background: rgba(0, 0, 255, 0.5);
+				 }
+				 30%{
+				 	transform: scale(20.2, 20.2); /*확대*/
+				 	background: rgba(255, 255, 0, 0.7);
+				 }
+				 50% {
+				 	transform: scale(1.2, 1.2);
+				 }
+				 to {
+				 	width: 400px;
+				 	background: rgba(255, 0, 0, 0.5);
+				 }		
+			}
+			.animation_div {
+				margin: 0 auto;
+				width: 400px;
+				margin-bottom: 20px;
+				height: 50px;
+				border: #000000 dashed 2px;
+				animation-duration: 2s; /*애니메이션의 진행 시간*/
+			}
+			.sample1 { 
+				animation-name: ani_1; /* @keyframes 규칙으로 생성한 애니메이션 이름을 지정하여 해당 애니메이션이 실행되도록 하는 속성이다.*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>keyframes 속성</h1>
+		<h3>animation 속성에 적용할 키프레임을 생성하기 위한 규칙을 설정한다.</h3>
+		<div class="animation_div sample1">
+			@keyframes 규칙을 사용하여 ani_1이라는 이름의 애니메이션을 정의한다.
+		</div>
+	</body>
+</html>

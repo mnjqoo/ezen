@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>border-shadow.html</title>
+		<style>
+			div {
+				padding: 20px;
+				margin: 20px;
+				width: 100px;
+				height: 60px;
+				float: left;
+				font-weight: bold;
+				border: 5px solid #CCC;
+				color: #FFF;
+				background: #054D4A;
+			}
+			.inset {
+				box-shadow: inset 5px 5px 0px 0px #000; /*하,우,블러,늘리기*/
+			}
+			.outset {
+				box-shadow: 5px 5px 0px 0px #000;
+			}
+			.blur {
+				box-shadow: 5px 5px 5px 0px #000;
+			}
+			.spread {
+				box-shadow: 5px 5px 0px 5px #000;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>border-shadow 속성</h1>
+		<h3>요소 박스의 그림자를 지정한다.</h3>
+		<div class="inset">	</div>
+		<div class="outset"></div>
+		<div class="blur">	</div>
+		<div class="spread"></div>
+	</body>
+</html>

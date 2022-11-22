@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>border-radius.html</title>
+		<style>
+			div {
+				position: absolute;
+				padding: 10px;
+				width: 160px;
+				height: 30px;
+				color: #0000FF;
+				border: #F00 solid 10px;
+				background-color: #CCCCCC;
+			}
+			.bottom-left2 {
+				top: 240px;
+				left: 640px;
+				border-color: #FA5858;
+				border-radius: 0 0 0 40px / 0 0 0 20px;
+			}
+			.bottom-left1 {
+				top: 240px;
+				left: 430px;
+				border-color: #FA5858;
+				border-bottom-left-radius: 40px 20px; 
+			}
+			.bottom-right2 {
+				top: 240px;
+				left: 220px;
+				border-color: #FE9A2E;
+				border-radius: 0 0 40px 0 / 0 0 20px 0;
+			}
+			.bottom-right1 {
+				top: 240px;
+				left: 10px;
+				border-color: #FE9A2E;
+				border-bottom-right-radius: 40px 20px; 
+			}
+			.top-right2 {
+				top: 400px;
+				left: 220px;
+				border-color: #C8FE2E;
+				border-radius: 0 40px  0 0 / 0 20px 0 0;
+			}
+			.top-right1 {
+				top: 400px;
+				left: 10px;
+				border-color: #C8FE2E;
+				border-top-right-radius: 40px 20px; 
+			}
+			.top-left2 {
+				top: 400px;
+				left: 640px;
+				border-color: #9A2EFE;
+				border-radius: 40px 0 0 0 / 20px 0 0 0;
+			}
+			.top-left1 {
+				top: 400px;
+				left: 430px;
+				border-color: #9A2EFE;
+				border-top-left-radius: 40px 20px; 
+			}
+			.border-radius1 {
+				left: 10px;
+				border-radius: 40px;
+			}
+			.border-radius2 {
+				left: 220px;
+				border-color: #00BFFF;
+				border-radius: 40px / 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>border-radius 속성</h1>
+		<h3>요소 박스의 테두리 선을 둥근 모서리 형태로 지정한다.</h3>
+		<div class="border-radius1">
+			border-radius: 40px;
+		</div>
+		<div class="border-radius2">
+			border-radius: 40px / 20px;
+		</div>
+		<div class="top-left1">
+			border-top-left-radius: 40px 20px;
+		</div>
+		<div class="top-left2">
+			border-top-left-radius: 40px 0 0 0 / 20px 0 0 0; <!-- x / y -->
+		</div>
+		<div class="top-right1">
+			border-top-right-radius: 40px 20px;
+		</div>
+		<div class="top-right2">
+			border-top-right-radius: 0 40px  0 0 / 0 20px 0 0;
+		</div>
+		<div class="bottom-right1">
+			border-bottom-right-radius: 40px 20px;
+		</div>
+		<div class="bottom-right2">
+			border-bottom-right-radius: 0 0 40px 0 / 0 0 20px 0;
+		</div>
+		<div class="top-right2">
+			border-top-right-radius: 0 40px  0 0 / 0 20px 0 0;
+		</div>
+		<div class="bottom-left1">
+			border-bottom-left-radius: 40px 20px;
+		</div>
+		<div class="bottom-left2">
+			border-bottom-left-radius: 0 0 0 40px / 0 0 0 20px;
+		</div>
+	</body>
+</html>

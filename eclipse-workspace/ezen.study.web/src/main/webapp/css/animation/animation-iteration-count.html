@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>animation-iteration-count.html</title>
+		<style>
+			@keyframes ani_1 {
+				from {
+					transform: scale(0) rotate(0deg); /*시계방향으로 회전*/
+				}
+				to {
+					transform: scale(3.0, 1.5) rotate(360deg);
+				}
+			}
+			.animation_div {
+				position: absolute;
+				text-align: center;
+			}
+			.sample1 {
+				left: 50px;
+			}
+			.sample2 {
+				left: 600px;
+			}
+			.animation_div img {
+				animation-name: ani_1;
+				animation-duration: 0.1s;
+			}
+			.sample1 img {
+				animation-iteration-count: 2;
+			}
+			.sample2 img {
+				animation-iteration-count: infinite;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>animation-iteration-count 속성</h1>
+		<h3>애니메이션의 반복 횟수를 지정한다.</h3>
+		<div class="animation_div sample1">
+			<img src="../images/p.png"/>
+			<p>애니메이션 2회 반복</p>
+		</div>
+		<div class="animation_div sample2">
+			<img src="../images/p.png"/>
+			<p>애니메이션 무한 반복</p>
+		</div>
+	</body>
+</html>

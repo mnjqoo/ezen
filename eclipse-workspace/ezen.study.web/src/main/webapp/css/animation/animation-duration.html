@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>animation-duration.html</title>
+		<style>
+			@keyframes ani_1 {
+				from {
+					transform: scale(0) rotateY(0deg); /*Y축을 기준으로 (값)도 만큼 회전 */
+				}
+				to {
+					transform: scale(1.0, 1.0) rotateY(360deg);
+				}
+			}
+			.animation_div {
+				position: absolute;
+				text-align: center;
+			}
+			.sample1 {
+				left: 50px;
+			}
+			.sample2 {
+				left: 400px;
+			} 
+			.animation_div img {
+				animation-name: ani_1;
+			}
+			.sample1 img {
+				animation-duration: 3s;
+			}
+			.sample2 img {
+				animation-duration: 6s;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>animation-duration 속성</h1>
+		<h3>실행된 에니메이션의 진행 시간을 지정한다.</h3>
+		<div class="animation_div sample1">
+			<img src= "../images/rabbit.png"/>
+			<p>3초동안 실행</p>
+		</div>
+		<div class="animation_div sample2">
+			<img src= "../images/rabbit.png"/>
+			<p>6초동안 실행</p>
+		</div>
+	</body>
+</html>
