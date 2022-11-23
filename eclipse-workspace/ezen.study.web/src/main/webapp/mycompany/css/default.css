@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+body {
+	
+	background-color: #898989;
+	margin: 0;
+	padding: 0;
+	font-size: 0.75em;
+	line-height: 1.2em;
+	color: #333;
+	
+}
+.clear {
+	
+	clear: both;
+	
+}
+#wrap {
+	
+	width: 971px; /*각자 웹 페이지 크기에 맞게 사이즈를 설정한다.*/
+	text-align: left;
+	margin: 0;
+	margin-right: auto;
+	margin-left: auto; /*화면 가운데에 올 수 있도록 설정한다.*/
+	background-image: url(../images/shadow.png);
+	background-repeat: repeat-y; /*배경 이미지를 세로로 깔아준다.*/
+	min-height: 980px; /*컨텐츠 양에 관계없이 유지 할 최소 높이*/
+	
+}
+#logo {
+	
+	float: left;
+	width: 265px;
+	height: 62px;
+	margin: 60px 0 0 40px;
+	
+}
+header {
+	
+	height: 151px;
+	
+}
+nav#top_menu {
+	
+	width: 600px;
+	margin: 50px 20px 0 0;
+	float: right;
+	
+}
+nav#top_menu ul {
+	
+	list-style: none; /*스타일(동그라미)을 없앤다.*/
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	font-weight: 100;
+	color: #333;
+	
+}
+nav#top_menu ul li {
+	
+	float: left; /* 상단 메뉴들을 옆으로 나열한다.*/
+	margin: 0 5px; /* 상단 메뉴들을 옆으로 간격을 준다.*/
+	
+}
+nav#top_menu a {
+	
+	display: block;
+	height: 20px;
+	padding: 10px;
+	text-decoration: none; /*밑줄을 없앤다.*/
+	color: #333;
+	
+}
+nav#top_menu a:hover { /*커서를 가져가면 파란 밑줄이 생기도록 한다.*/
+	
+	background-image: url(../images/blue.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+#login {
+	
+	float: right;
+	margin: 20px 64px 0 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	word-spacing: 5px; /*단어 사이에 간격을 준다*/
+	
+}
+#login a {
+	
+	text-decoration: none;
+	color: #333;
+	
+}
+#login a:hover { /*커서를 가져가면 글자 색을 바꾼다.*/
+	
+	color: #f90;
+}
+footer {
+	
+	margin: 50px 0 0 0;
+	height: 120px;
+	background-image: url(../images/under_logo.gif);
+	background-repeat: no-repeat;
+	background-position: 40px 20px;
+	
+}
+footer hr {
+	
+	width: 900px;
+	margin: 0 0 0 35px;
+	
+}
+footer #copy {
+	
+	font-family: Verdana, Geneva, sans-serif;
+	width: 450px;
+	margin: 20px 0 0 290px;
+	
+}
+footer #social {
+	
+	width: 130px;
+	margin: 20px 20px 0 0;
+	float: right;
+	
+}
+footer #social img {
+	
+	margin: 0 7px;
+	
+}
