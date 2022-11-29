@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<meta name="viewport" content="width=device-with, initial-scale=1">
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<!-- 합쳐지고 최소화된 최신 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+		<!-- 부가적인 테마 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		
+		<style>
+			.container {
+				padding: 80px 120px;
+			}
+			.person {
+				border: 10px solid transparent;
+				margin-bottom: 25px;
+				width: 80%;
+				height: 80%;
+				opacity: 0.7;
+			}
+			.person:hover {
+				border-color: #F1F1F1;
+			}
+			.carousel-inner img {
+				filter: grayscale(90%);
+				width: 100%;
+				margin: auto;
+			}
+			.carousel-caption h3 {
+				color: #FF3333;
+			}
+			.bg-1 {
+				background: #2D2D30;
+				color: #BDBDBD;
+			}
+			.bg-1 h3 {
+				color: #FFF;
+			}
+			.bg-1 p {
+				font-style: italic; 
+			}
+			.list-group-item:first-child { /*리스트의 첫번째 칸 테두리 양 윗부분을 뾰족하게*/
+				border-top-right-radius: 0;
+				border-top-left-radius: 0;
+			}
+			.list-group-item:last-child { /*리스트의 마지막 칸 테두리 양 밑부분을 뾰족하게*/
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+			.affix {
+				top: 0;
+				width: 100%;
+				z-index: 9999 !important; /*z축에서의 값 숫자가 클 수록 위로 올라간다.*/
+			}
+		</style>
+	</head>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+		<!-- 대표 이미지 -->
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators --> <!-- indicator를 만든 후 사진과 연결해준다. -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="images/Beatles4.jpg" alt="Beatles4" width="1200" height="700">
+					<div class="carousel-caption">
+						<h3>Album Cover</h3>
+						<p>The most popular album cover</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="images/Beatles5.jpg" alt="Beatles5" width="1200" height="700">
+					<div class="carousel-caption">
+						<h3>Album Cover</h3>
+						<p>The most popular album cover</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="images/Beatles6.jpg" alt="Beatles6" width="1200" height="700">
+					<div class="carousel-caption">
+						<h3>Album Cover</h3>
+						<p>The most popular album cover</p>
+					</div>
+				</div>
+				<!-- Left and Right -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <!-- aria-hidden="true" : visible -->
+					<span class="sr-only">Previous</span> <!-- 숨기고 싶은 태그 요소에 사용하시면 화면상에서는 보이지 않지만, 검색 엔진에서는 이름이 적용된 텍스트를 그대로 읽어온다. -->
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+					<span class="sr-only">Next</span> 
+				</a>
+			</div>
+		</div>
+		
+		<!-- nav -->
+		<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="700">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myMenu">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="myMenu">
+					<ul class="nav navbar-nav">
+						<li><a href="#member">Member</a>
+						<li><a href="#tour">Tour</a>
+					</ul>
+				</div>
+			</div> 
+			
+		</nav>
+		
+		<!-- 밴드 멤버 소개 -->
+		<div class="container text-center" id="member">
+			<h3>THE BAND</h3> 
+			<p>We love music!</p>
+			<p>We have created a fictional band website. Lorem ipsum...</p>
+			<br/>
+			<div class="row">
+				<div class="col-sm-4">
+					<p class="text-center"><strong>Name</strong></p><br/>
+					<a href="#demo1" data-toggle="collapse">
+						<img src="images/Beatles1.jpg" class="img-circle person" width="255" height="255">
+					</a>
+					<div id="demo1" class="collapse">
+						<p>Guitarist and Lead Vocalist</p>
+						<p>Loves long walks on the beach</p>
+						<p>Member since 1987</p>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<p class="text-center"><strong>Name</strong></p><br/>
+					<a href="#demo2" data-toggle="collapse">
+						<img src="images/Beatles2.jpg" class="img-circle person" width="255" height="255">
+					</a>
+					<div id="demo2" class="collapse">
+						<p>Guitarist and Lead Vocalist</p>
+						<p>Loves long walks on the beach</p>
+						<p>Member since 1987</p>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<p class="text-center"><strong>Name</strong></p><br/>
+					<a href="#demo3" data-toggle="collapse">
+						<img src="images/Beatles3.jpg" class="img-circle person" width="255" height="255">
+					</a>
+					<div id="demo3" class="collapse">
+						<p>Guitarist and Lead Vocalist</p>
+						<p>Loves long walks on the beach</p>
+						<p>Member since 1987</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 공연 일정과 티켓 판매 -->
+		<div class="bg-1">
+			<div class="container">
+				<h3 class="text-center" id="tour">TOUR DATES</h3>
+				<p class="text-center">Lorem ipsum we'll play you some music. <br/> Remember to book your tickets!</p>
+				<!-- 티켓 판매 -->
+				<ul class="list-group">
+					<li class="list-group-item">September <span class="label label-danger">Sold Out!</span></li>					
+					<li class="list-group-item">October <span class="label label-danger">Sold Out!</span></li>					
+					<li class="list-group-item">November <span class="badge">8</span></li>				 	
+				</ul>
+				
+				<!-- 공연 도시 -->
+				<div class="row text-center">
+					<div class="col-sm-4">
+						<div class="thumbnail">
+							<img src="images/city1.jpg" alt="city1" width="400" height="300">
+							<p><strong>Paris</strong></p>
+							<p>Fri. 23 November 2017</p>
+							<button class="btn">Buy Tickets</button>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="thumbnail">
+							<img src="images/city2.jpg" alt="city2" width="400" height="300">
+							<p><strong>Dubai</strong></p>
+							<p>Fri. 23 November 2017</p>
+							<button class="btn">Buy Tickets</button>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="thumbnail">
+							<img src="images/city3.jpg" alt="city3" width="400" height="300">
+							<p><strong>Swiss</strong></p>
+							<p>Fri. 23 November 2017</p>
+							<button class="btn">Buy Tickets</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
