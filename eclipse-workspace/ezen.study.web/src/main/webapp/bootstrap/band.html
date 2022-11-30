@@ -55,9 +55,83 @@
 				border-bottom-right-radius: 0;
 				border-bottom-left-radius: 0;
 			}
+			/*티켓구매버튼*/
+			.btn {
+				padding: 10px 20px;
+				background-color: #333;
+				color: #F1F1F1;
+				border-radius: 0; 
+				transition: .3s; /*버튼 위에 커서를 올릴때 글자가 사라지는데 걸리는 시간*/
+			}
+			.btnTicket {
+				padding: 10px 20px;
+			}
+			.btn:hover, btn:focus {
+				border: 1px solid #333;
+				background-color: #FFF;
+				color: #000;
+			}
+			.modal-header, h4, close {
+				background-color: #333;
+				color: #FFF;
+			}
+			.modal-header, .modal-body {
+				padding: 40px 50px;
+			}
+			.nav-tabs li a {
+				color: #777;
+			}
+			.navbar {
+				margin-bottom: 0;
+				background: #2D2D2D !important;
+				border: 0;
+				font-size: 11px !important;
+				letter-spacing: 4px;
+				opacity: 0.9;
+			}
+			.navbar li a, navbar, .navbar-brand {
+				color: #D5D5D5 !important; 
+			}
+			.navbar-nav li a:hover {
+				color: #FFF !important;
+			}
+			.navbar-nav li.active a {
+				color: #FFF !important;
+				background-color: #292929 !important;
+			}
 		</style>
 	</head>
-	<body>
+	<body id="myMusic">
+		<!-- 상단 메뉴바(상단고정) -->
+		<nav class="navbar navbar-fixed-top" >
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myMusic">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Music</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myMusic">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#myMusic">HOME</a></li>
+						<li><a href="#band">BAND</a></li>
+						<li><a href="#tour">TOUR</a></li>
+						<li><a href="#contact">CONTACT</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Manager</a></li>
+								<li><a href="#">Extras</a></li>
+								<li><a href="#">Admin</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><span class="glyphicon glyphicon-search"></span></a>
+					</ul>	
+				</div>
+			</div>
+		</nav>
+	
 		<!-- 대표 이미지 -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators --> <!-- indicator를 만든 후 사진과 연결해준다. -->
@@ -102,7 +176,7 @@
 		</div>
 		
 		<!-- 밴드 멤버 소개 -->
-		<div class="container text-center">
+		<div class="container text-center" id="band">
 			<h3>THE BAND</h3>
 			<p>We love music!</p>
 			<p>We have created a fictional band website. Lorem ipsum...</p>
@@ -145,7 +219,7 @@
 		</div>
 		
 		<!-- 공연 일정과 티켓 판매 -->
-		<div class="bg-1">
+		<div class="bg-1" id="tour">
 			<div class="container">
 				<h3 class="text-center">TOUR DATES</h3>
 				<p class="text-center">Lorem ipsum we'll play you some music. <br/> Remember to book your tickets!</p>
@@ -163,7 +237,7 @@
 							<img src="images/city1.jpg" alt="city1" width="400" height="300">
 							<p><strong>Paris</strong></p>
 							<p>Fri. 23 November 2017</p>
-							<button class="btn">Buy Tickets</button>
+							<button class="btn" data-toggle="modal" data-target="#ticketModal">Buy Tickets</button>
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -171,7 +245,7 @@
 							<img src="images/city2.jpg" alt="city2" width="400" height="300">
 							<p><strong>Dubai</strong></p>
 							<p>Fri. 23 November 2017</p>
-							<button class="btn">Buy Tickets</button>
+							<button class="btn" data-toggle="modal" data-target="#ticketModal">Buy Tickets</button>
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -179,11 +253,100 @@
 							<img src="images/city3.jpg" alt="city3" width="400" height="300">
 							<p><strong>Swiss</strong></p>
 							<p>Fri. 23 November 2017</p>
-							<button class="btn">Buy Tickets</button>
+							<button class="btn" data-toggle="modal" data-target="#ticketModal">Buy Tickets</button>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 티켓 구매 Modal창 -->
+				<div class="modal fade" id="ticketModal" role="dialog">
+					<div class="modal-dialog">
+						<!-- Modal Content -->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">x</button>
+								<h4><span class="glyphicon glyphicon-credit-card"></span> Tickets</h4>
+							</div>
+							<div class="modal-body">
+								<form action="/tour/ticketting.html" method="post" role="form">
+									<div class="form-group">
+										<label><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $25 per person</label>
+										<input type="number" class="form-control" id="psw" placeholder="How Many?"/>
+									</div>
+									<div class="form-group">
+										<label><span class="glyphicon glyphicon-user"></span> Send To</label>
+										<input type="text" class="form-control" id="username" placeholder="티켓을 받으실 이메일을 입력하세요.">
+									</div>
+									<button type="submit" class="btn btn-block">Pay <span class="glyphicon glyphicon-ok"></span></button>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btnTicket btn-danger pull-left" data-dismiss="modal">
+									<span class="glyphicon glyphicon-remove"></span> Cancel
+								</button>
+								<p>Need <a href="#">Help?</a></p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<!-- 연락처 -->
+		<div class="container" id="contact">
+			<h3 class="text-center">Contact</h3>
+			<p class="text-center"><em>We love our fans!</em></p>
+			
+			<div class="row">
+				<div class="col-md-4">
+					<p>Fan? Drop a note.</p>
+					<p><span class="glyphicon glyphicon-map-marker"></span> Seoul, Korea</p>
+					<p><span class="glyphicon glyphicon-phone"></span> Phone: +82 02-1234-1234</p>
+					<p><span class="glyphicon glyphicon-envelope"></span> Email: admin@dd.co.kr</p>
+				</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<input class="form-control" name="name" placeholder="이름을 입력하세요." type="text" required/> <!-- required: 필수 항목 -->
+						</div>
+						<div class="col-sm-6 form-group">
+							<input class="form-control" name="email" placeholder="이메일 주소를 입력하세요." type="email" required/>
+						</div>
+					</div>
+					<textarea class="form-control" name="comments" placeholder="남기고 싶은 말을 써주세요." rows="6"></textarea>
+					<br/>
+					<div class="row">
+						<div class="col-md-12 form-group">
+							<button type="submit" class="btnTicket btn-primary pull-right">보내기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br/>
+			
+			<h3 class="text-center">From The Blog</h3>
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#home">Member1</a></li>
+				<li><a data-toggle="tab" href="#menu1">Member2</a></li>
+				<li><a data-toggle="tab" href="#menu2">Member3</a></li>
+			</ul>
+			<!-- 탭의 내용 -->
+			<div class="tab tab-content">
+				<div id="home" class="tab-pane fade in active">
+					<h3>Member1, Manager &amp; Drummer</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+				<div id="menu1" class="tab-pane fade in">
+					<h3>Member2, Bass Player</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+				<div id="menu2" class="tab-pane fade in">
+					<h3>Member3, Guitarlist</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>			
+		</div>
+		
+		
 	</body>
 </html>
