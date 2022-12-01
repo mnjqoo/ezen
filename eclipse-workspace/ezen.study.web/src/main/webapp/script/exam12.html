@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>여러개의 case절을 가지는 switch문</h1>
+		
+		
+	<script>
+		var day = new Date().getDay(); // 오늘의 요일을 반환한다. (0:일요일 ~ 6:토요일)
+		document.write(day);
+		
+		switch(day) {
+		case 1: 		
+		case 2: 		
+		case 3: document.write("한 주가 시작된 지 얼마 안되었어요. 빨리 주말이 왔으면 좋겠어요!"); break;		
+		case 4: 		
+		case 5: document.write("불타는 금요일이 다가왔습니다. 조금만 더 힘을 내세요."); break;		
+		case 6:	
+		case 0: document.write("즐거운 주말입니다. 푹 쉬시고 가끔 공부도 해주세요."); break; 	
+		} 
+	</script>
+	</body>
+</html>

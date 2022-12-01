@@ -56,9 +56,73 @@
 				background-color: #FFF !important;
 				color: #F4511E;
 			}
+			.panel-heading {
+				color: #FFF !important;
+				background-color: #F4511E !important;
+				padding: 25px;
+				border-bottom: 1px solid transparent;
+			}
+			.panel-footer {
+				background-color: white;
+			}
+			.panel-footer h3 {
+				font-size: 32px;
+			}
+			.panel-footer h4 {
+				font-size: 14px;
+				color: #AAA;
+			}
+			.panel-footer .btn {
+				margin: 15px 0;
+				background-color: #F4511E;
+				color: #FFF;
+			}
+			.navbar {
+				margin-bottom: 0;
+				background-color: #F4511E;
+				z-index: 9999;
+				border: 0;
+				font-size: 12px;
+				letter-spacing: 4px;
+			}
+			.navbar li a, .navbar .navbar-brand {
+				color: white;
+			}
+			.navbar-nav li a:hover, .navbar-nav li.active a {
+				color: #F4511E;
+				background-color: #FFF;
+			}
+			.navbar-toggle span {
+				background-color: #FFF;
+			}
 		</style>
 	</head>
 	<body>
+	
+		<!-- 상단 메뉴 -->
+		<nav class="navbar navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myCompany">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#myPage" class="navbar-brand">Logo</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myCompany">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#about">ABOUT</a></li>
+						<li><a href="#services">SERVICES</a></li>
+						<li><a href="#portfolio">PORTFOLIO</a></li>
+						<li><a href="#pricing">PRICING</a></li>
+						<li><a href="#map">MAP</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- 점보트론 -->
 		<div class="jumbotron text-center">
 			<h1>My Company</h1>
 			<p>We love our customers</p> 
@@ -181,7 +245,7 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
-					<div class="panel panel-default text-center">
+					<div class="panel text-center">
 						<div class="panel-heading">
 							<h1>Basic</h1>
 						</div>
@@ -194,12 +258,13 @@
 						</div>
 						<div class="panel-footer">
 							<h3>600,000원</h3>
+							<h4>한 대당 가격입니다.</h4>
 							<button class="btn btn-lg">Buy</button>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4">
-					<div class="panel panel-default text-center">
+					<div class="panel text-center">
 						<div class="panel-heading">
 							<h1>Middle</h1>
 						</div>
@@ -212,12 +277,13 @@
 						</div>
 						<div class="panel-footer">
 							<h3>900,000원</h3>
+							<h4>한 대당 가격입니다.</h4>
 							<button class="btn btn-lg">Buy</button>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4">
-					<div class="panel panel-default text-center">
+					<div class="panel text-center">
 						<div class="panel-heading">
 							<h1>High</h1>
 						</div>
@@ -230,12 +296,16 @@
 						</div>
 						<div class="panel-footer">
 							<h3>1,350,000원</h3>
+							<h4>한 대당 가격입니다.</h4>
 							<button class="btn btn-lg">Buy</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<!-- 지도 사진 -->
+		<img src="images/city1.jpg" class="img-responsive" style="width: 100%;">
 		
 	</body>
 </html>
