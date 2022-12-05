@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>prompt로 등록하여 사용하기</h1>
+		<p id="text">이 글자들은 HTML문서가 로딩되면 다른 글자들로 바뀝니다.</p>
+		
+		
+	<script>
+	window.onload = function(){
+		alert("HTML문서가 로딩되었습니다.");
+		
+		let text = document.getElementById("text");
+		text.innerHTML = "HTML 문서가 로딩되었습니다.";
+	}
+	</script>
+	</body>
+</html>

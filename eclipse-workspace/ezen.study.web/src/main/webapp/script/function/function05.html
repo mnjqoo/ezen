@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>같은 이름의 전역변수와 지역변수</h1>
+		
+		
+	<script>
+		var num = 10; //전역 변수 num을 선언하고 10으로 초기화한다.
+		
+		function globalNum() {
+			var num = 33; //지역변수 num을 선언하고 33으로 초기화한다.
+			document.write("<h1>함수 내부의 num: " + num + "</h1>");
+		}
+		
+		globalNum();
+		
+		document.write("<br/><h1>함수의 호출이 끝난 후 num: " + num + "</h1>");
+	</script>	
+	</body>
+</html>

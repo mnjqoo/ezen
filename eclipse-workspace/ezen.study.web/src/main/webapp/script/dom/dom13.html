@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>브라우저 창 열기, 닫기</h1>
+		<button onclick="openWindow();">새로운 창 열기</button>
+		<button onclick="closeWindow();">새로 열어놓은 창 닫기</button>
+		
+	<script>
+	var newWindowObj;
+	var windowOption = "menubar=yes, location=yes, resizable=no, scrollbars=yes, status=yes";
+	function openWindow(){
+		newWindowObj = window.open("http://www.naver.com", "새로운 브라우저 창 열기", windowOption);
+	}
+	function closeWindow(){
+		newWindowObj.close();
+	}
+	</script>	
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>prompt 대화상자</h1>
+		<button onclick="promptDialogBox()">곱하기</button><br/>
+		곱하기 결과: <p id="text"></p>
+		
+		
+	<script>
+	function promptDialogBox(){
+		let num1 = prompt("첫번째 숫자를 입력하십시오.", 1);
+		let num2 = prompt("두번째 숫자를 입력하십시오.", 2);
+		
+		document.getElementById("text").innerHTML = (num1 * num2);
+	}
+	</script>
+	</body>
+</html>

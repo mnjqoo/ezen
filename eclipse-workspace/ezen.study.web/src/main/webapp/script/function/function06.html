@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>함수의 유효 범위</h1>
+		
+		
+	<script>
+		var x = 10, y = 20; //전역변수로 선언 후 초기화
+		
+		function minus() { //minus()는 전역함수이다.
+			return x - y; //전역변수 x, y를 사용 할 수 있다.
+		}
+		
+		document.write("<h1>전역함수 munus()의 결과: " + minus() + "</h1>");
+		
+		function parentFunc() {
+			var x = 11, y = 22;
+			
+			function plus() { //plus()는 내부함수이다.
+				return x + y; //지역변수 x, y를 사용.
+			}
+			
+			return plus();
+		}
+		
+		document.write("<h1>내부 함수를 사용한 parentFun()의 결과: " + parentFunc() + "</h1>");
+	</script>	
+	</body>
+</html>

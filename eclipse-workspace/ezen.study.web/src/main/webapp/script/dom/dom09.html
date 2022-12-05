@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>DOM 요소의 Style변경하기</h1>
+		<p id="text">이 글자들은 기본색이 검정입니다.</p> <br/>
+		<button onclick="changeMagentaColor()">핑크색으로 색상변경</button>
+		<button onclick="changeBlueColor()">파란색으로 색상변경</button>
+		
+		
+	<script>
+	var str = document.getElementById("text");
+	function changeMagentaColor(){
+		str.style.color = "Magenta";
+	}
+	function changeBlueColor(){
+		document.getElementById("text").style.color = "blue";
+	}
+	</script>	
+	</body>
+</html>

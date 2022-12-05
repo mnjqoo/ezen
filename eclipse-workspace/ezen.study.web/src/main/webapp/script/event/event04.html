@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>addEventListener() 메소드</h1>
+		<button id ="btn">글자들을 보여주기</button>
+		<p id ="text">여기에 글자가 나타납니다.</p>
+		
+		
+	<script>
+	let showBtn = document.getElementById("btn"); //id가 btn인 요소를  선택한다.
+	
+	//버튼에 click이라는 이벤트 리스너를 장착한다.(click이라는 이벤트가 생겼을 때 showText라는 이름의 함수가 실행된다.)
+	showBtn.addEventListener("click", showText); 
+	
+	function showText(){
+		document.getElementById("text").innerHTML = "click event Listener가 작동되었습니다.";
+	}
+	</script>
+	</body>
+</html>

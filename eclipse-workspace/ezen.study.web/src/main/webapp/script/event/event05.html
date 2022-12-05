@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>여러개의 이벤트 리스너를 등록하여 사용하기</h1>
+		<p>아래의 버튼 위에 마우스를 올리거나 클릭해보세요.</p>
+		<button id="btn">여기를 눌러보세요</button>
+		<p id="text"></p>
+		
+		
+	<script>
+	let btn = document.getElementById("btn");
+	
+	btn.addEventListener("click", btnClick);
+	btn.addEventListener("mouseover", btnMouseover);
+	btn.addEventListener("mouseout", btnMouseout);
+	
+	function btnClick(){
+		document.getElementById("text").innerHTML = "버튼을 클릭하였습니다.";
+	}
+	function btnMouseover(){
+		document.getElementById("text").innerHTML = "버튼 위에 마우스가 올라갔습니다.";
+	}
+	function btnMouseout(){
+		document.getElementById("text").innerHTML = "버튼에서 마우스가 빠져나갔습니다.";
+	}
+	</script>
+	</body>
+</html>

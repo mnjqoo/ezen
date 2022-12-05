@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>prompt 대화 상자</h1>
+		<button onclick="promptDialogBox()">prompt 대화상자</button>
+		<p id="text"></p>
+		
+		
+	<script>
+	function promptDialogBox(){
+		let inputStr=prompt("당신의 닉네임을 입력하십시오: ", "멋진사람");
+		
+		if(inputStr.length > 0){
+			document.getElementById("text").innerHTML="당신의 닉네임은 " + inputStr + "입니다.";
+		} else if(inputStr.length == 0 || inputStr == null){
+			document.getElementById("text").innerHTML ="당신은 본명을 사용하게 됩니다.";
+		}
+	}
+	</script>
+	</body>
+</html>

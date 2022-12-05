@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>confirm 창 열기</h1>
+		<button onclick="confirmDialogBox()" > confirm 대화상자 </button>
+		
+		<p id="text"></p>
+		
+		
+	<script>
+	function confirmDialogBox(){
+		let msg;
+		
+		if(confirm("회원가입을 하시겠습니까?\n\n회원가입을 하시려면 [예]를 눌러주십시오.") == true) {
+			msg="회원 가입에 동의하셨습니다.";
+		} else {
+			msg="회원 가입을 취소하셨습니다.";
+		}
+		
+		document.getElementById("text").innerHTML = msg;
+	}
+	</script>
+	</body>
+</html>

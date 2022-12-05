@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("p").on("click", function(){ //p요소를 클릭하면 function(){}안의 내용을 실행한다.
+				$("p").css("color", "magenta");
+			});
+		});
+		window.onload = function(){
+			alert("window onload 되었습니다.");
+		};
+		$(document).ready(function(){
+			alert("document ready가 되었습니다.")
+		});
+		</script>
+	</head>
+	<body>
+		<p>제이쿼리를 공부해보겠습니다.<br/>글자를 클릭해보세요!</p>
+	</body>
+</html>

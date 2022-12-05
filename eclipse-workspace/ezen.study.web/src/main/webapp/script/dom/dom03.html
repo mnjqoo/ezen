@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>클래스를 이용한 선택</h1>
+		
+		<ul>
+			<li class="odd">첫번째 아이템입니다.</li>
+			<li class="even">두번째 아이템입니다.</li>
+			<li class="odd">세번째 아이템입니다.</li>
+			<li class="even">네번째 아이템입니다.</li>
+			<li class="odd">다섯번째 아이템입니다.</li>
+		</ul>
+		
+		
+	<script>
+	var selectedItem1 = document.getElementsByClassName("odd");
+	var selectedItem2 = document.getElementsByClassName("even");
+	
+	alert(selectedItem1.length);
+	
+	for(var i = 0; i < selectedItem1.length; i++) {
+		selectedItem1.item(i).style.color = "magenta";
+	}
+	for(var i = 0; i < selectedItem2.length; i++) {
+		selectedItem2.item(i).style.color = "blue";
+	}
+	</script>	
+	</body>
+</html>

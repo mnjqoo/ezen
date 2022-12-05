@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>함수의 호출 => </h1>
+		
+		
+	<script>
+	function plus(x, y, z) { 
+		return x + y + z;
+	}
+	
+	document.write("<h1>매개 변수가 3개 전달 되면 => " + plus(1, 2, 3) + "</h1>");
+	document.write("<h1>매개 변수가 2개 전달 되면 => " + plus(1, 2) + "</h1>");
+	document.write("<h1>매개 변수가 1개 전달 되면 => " + plus(1) + "</h1>");
+	document.write("<h1>매개 변수가 0개 전달 되면 => " + plus() + "</h1>");
+	document.write("<h1>매개 변수가 4개 전달 되면 => " + plus(1, 2, 3, 4) + "</h1>");
+	//NaN (Not a Number) : 잘못된 입력으로 인해 계산을 할 수 없음.
+	//전달 되지 않은 값은 undefined 값으로 설정 되어 연산을 할 수 없음.
+	</script>	
+	</body>
+</html>

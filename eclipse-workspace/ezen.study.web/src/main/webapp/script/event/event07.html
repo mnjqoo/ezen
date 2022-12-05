@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>이벤트 객체</h1>
+		<button id="btn">여기를 눌러보세요.</button>
+		<p id="text"></p>
+		
+		
+	<script>
+	let btn = document.getElementById("btn");
+	btn.addEventListener("click", btnClick);
+	
+	function btnClick(){
+		document.getElementById("text").innerHTML = "이벤트 타입: " + event.type + ", 이벤트의 대상: " + event.target;
+	}
+	</script>
+	</body>
+</html>

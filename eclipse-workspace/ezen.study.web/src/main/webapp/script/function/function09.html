@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>argument 객체</h1>
+		
+		
+	<script>
+	function plus() {
+		var sum = 0; //매개변수로 들어오는 값을 합산하기 위한 변수
+		
+		for(var i = 0; i <arguments.length; i++){ //전달 받은 매개변수의 갯수만큼 반복한다.
+			sum += arguments[i]; //각 방의 값을 합산한다.
+		}
+		
+		return sum;
+	}
+	
+	document.write("<h1>매개 변수가 3개 전달 되면 => " + plus(1, 2, 3) + "</h1>");
+	document.write("<h1>매개 변수가 2개 전달 되면 => " + plus(1, 2) + "</h1>");
+	document.write("<h1>매개 변수가 1개 전달 되면 => " + plus(1) + "</h1>");
+	document.write("<h1>매개 변수가 0개 전달 되면 => " + plus() + "</h1>");
+	document.write("<h1>매개 변수가 4개 전달 되면 => " + plus(1, 2, 3, 4) + "</h1>");
+	</script>	
+	</body>
+</html>
