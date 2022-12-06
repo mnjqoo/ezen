@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("button").on("click", function(){
+				let newText = $("h1").html(); //<h1>요소의 텍스트를 읽어오는 메소드
+				$("#text").html(newText); //읽어온 텍스트를 id가 text인 요소에 설정한다. 
+			});
+			
+
+			
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>.html() 메소드 알아보기</h1>
+		
+		<p>아래의 버튼을 누르시면 다음 단락에 새로운 글자를 설정 할 수 있습니다.</p>
+		
+		<button>새로운 글자</button>
+		
+		<p id="text"></p>
+		
+	</body>
+</html>

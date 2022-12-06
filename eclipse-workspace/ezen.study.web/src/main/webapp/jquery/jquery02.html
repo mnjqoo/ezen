@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("p").on("click",function(){
+				alert("p 태그를 클릭하셨습니다.\n 글자들 중 일부를 변화시키겠습니다.")
+				$("span").css("fontSize", "40px");
+			});
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>HTML Tag 선택자</h1>
+		<p>지금부터 <span>jQuery</span>를 알아보겠습니다.!<br/>
+		마우스로 글자를 클릭해서 변화를 살펴보세요.</p>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("button").on("click", function(){
+				//체크된 모든 요소를 선택한다.
+				$(":checked").next().text("이 요소는 체크가 되어있습니다.")
+			});
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>Form 요소의 선택</h1>
+		
+		<form>
+			<input type="checkbox" name="animal" value="tiger"><span>호랑이</span><br/>
+			<input type="checkbox" name="animal" value="dog" checked><span>강아지</span><br/>
+			<input type="checkbox" name="animal" value="cat"><span>고양이</span><br/>
+			<input type="checkbox" name="animal" value="lion"><span>사자</span><br/>
+		</form>
+		
+		<button>Filtering</button>
+	</body>
+</html>

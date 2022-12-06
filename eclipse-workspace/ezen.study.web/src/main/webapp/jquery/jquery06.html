@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			let items = $("li"); // <li> 요소를 모두 선택하여 items에 저장한다.
+			$("button").on("click", function(){
+				$("#len").text("저장된 <li> 요소의 총 갯수는 " + items.length + "개 입니다.")
+			});
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>선택한 요소의 길이</h1>
+		
+		<ul>
+			<li>HTML5</li>
+			<li>JQuery</li>
+			<li>CSS</li>
+			<li>Spring</li>
+			<li>JAVA</li>
+		</ul>
+		
+		<button>선택된 요소의 길이</button>
+		<p id="len"></p>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		
+		<script>
+		$(function(){ 
+			$("button").on("click", function(){
+				//class가 item인 각 요소를 id가 itemOne인 요소로 대체한다.
+				$("#itemOne").replaceAll(".item");
+			})
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>.replaceAll() 메소드</h1>
+		<p>선택한 요소를 지정한 요소로 대체한다. </p>
+		<p>이 메소드는 인수로 선택자나 jQuery 객체, HTML DOM 요소, 배열 등을 전달 받을 수 있다. </p>
+		
+		<ul>
+			<li class="item" id="itemOne">첫번째 아이템</li>
+			<li class="item" id="itemTwo">두번째 아이템</li>
+			<li class="item" id="itemThree">세번째 아이템</li>
+		</ul>
+		
+		<button>아이템 대체하기</button>
+	</body>
+</html>

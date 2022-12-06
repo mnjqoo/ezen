@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("button").on("click", function(){
+				$("li:has(span)").text("저는 <span>요소를 가지고 있는 아이템입니다.") //span을 가지고 있는 li요소
+			});
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>선택한 요소를 필터링 하기</h1>
+		
+		<ul>
+			<li>HTML</li>
+			<li>JQuery</li>
+			<li>ㅇㅇ<span>CSS</span>ㅇㅇ</li>
+			<li>Spring</li>
+			<li>JAVA</li>
+		</ul>
+		
+		<button>선택된 요소를 필터링 하기</button>
+		<p id="len"></p>
+	</body>
+</html>

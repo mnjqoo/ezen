@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("button").on("click", function(){
+				//id가 list인 요소의 li 중에서 인덱스 1번째 요소에 텍스트를 설정한다.
+				$("#list").find("li").eq(1).html("두번째 아이템을 선택하셨습니다."); 
+				$("#list").find("li").eq(3).html("네번째 아이템을 선택하셨습니다."); 
+			});
+			
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>메소드 체이닝</h1>
+		
+		<ul id="list">
+			<li>HTML5</li>
+			<li>JQuery</li>
+			<li>CSS</li>
+			<li>Spring</li>
+			<li>JAVA</li>
+		</ul>
+		
+		<button>Test Change</button>
+		
+	</body>
+</html>

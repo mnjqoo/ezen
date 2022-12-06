@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("p").on("click", function(){
+				$("#p1").css("border", "6px dotted magenta");
+			});
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>아이디 선택자</h1>
+		<p id="p1">이 단락은 아이디 선택자가 설정되어 있습니다</p>
+		<p>마우스로 글자를 클릭해서 변화를 살펴보세요.</p>
+	</body>
+</html>

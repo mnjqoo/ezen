@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("#getter").on("click", function(){
+				let size = "너비는 " + $("#box").width() + "px 이고, "
+						+ "높이는 " + $("#box").height() +"px 입니다. <br/>";
+						
+				$("#text").html(size);
+			});
+			
+			$("#setterSmall").on("click", function(){
+				let w = $("#box").width();
+				let h = $("#box").height();
+				$("#box").width(w/2).height(h/2);
+				
+				let size = "너비는 " + $("#box").width() + "px 이고, "
+				+ "높이는 " + $("#box").height() +"px 입니다. <br/>";
+				
+				$("#text").html(size);
+			});
+			
+			$("#setterBig").on("click", function(){
+				let w = $("#box").width();
+				let h = $("#box").height();
+				$("#box").width(w*2).height(h*2);
+				
+				let size = "너비는 " + $("#box").width() + "px 이고, "
+				+ "높이는 " + $("#box").height() +"px 입니다. <br/>";
+				
+				$("#text").html(size);
+			});
+
+			
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>width() height() 사용하기</h1>
+		
+		<p>아래의 버튼을 사용하여 div 요소의 크기를 알아내거나 변경할 수 있습니다.</p>
+		
+		<button id="getter">크기 알아내기</button>
+		<button id="setterSmall">크기 줄이기</button>
+		<button id="setterBig">크기 늘이기</button>
+		<br/> <br/> 
+		<div id="box" style="width: 400px; height: 200px; background-color: green;"></div>
+		<p id="text"></p>
+	</body>
+</html>

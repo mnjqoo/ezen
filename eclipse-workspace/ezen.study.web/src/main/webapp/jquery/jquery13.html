@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<script>
+		//문서가 준비가 되면
+		$(function(){ 
+			$("#btn_1").on("click", function(){
+				$("p").prepend("<b>Prepended Text</b>");
+			});
+			
+			$("#btn_2").click(function(){
+				$("ol").prepend("<li>새로운 아이템입니다!</li>");
+			});
+			
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>.Prepend() 메소드</h1>
+		<p>.Prepend() 메소드는 선택한 요소의 처음에 새로운 요소나 컨텐츠를 추가한다.</p>
+		<p>This is paragraph.</p>
+		
+		<ol>
+			<li>HTML5</li>
+			<li>JQuery</li>
+			<li>CSS</li>
+			<li>Spring</li>
+			<li>JAVA</li>
+		</ol>
+		
+		<button id="btn_1">Prepend Test</button>
+		<button id="btn_2">Prepend List Item</button>
+		
+	</body>
+</html>

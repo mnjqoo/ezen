@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<style>
+			table, tr, td {
+				border: 2px solid orange;
+			}
+			table {
+				margin-bottom: 15px; 
+			}
+			table td {
+				width: 140px;
+				text-align: center;
+			}
+		</style>
+		<script>
+		$(function(){ 
+			$("#btn_b").on("click", function(){
+				//id가 secondColumn인 요소의 바로 앞에 새로운 <td>요소를 추가한다.
+				$("<td>코끼리</td>").insertBefore("#secondColumn"); 
+				
+			});
+			$("#btn_a").on("click", function(){
+				//id가 secondColumn인 요소의 바로 앞에 새로운 <td>요소를 추가한다.
+				$("<td>코끼리</td>").insertAfter("#secondColumn"); 
+				
+			});
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>.insertBefore() 메소드</h1>
+		<p>특정 요소를 선택한 요소 앞에 삽입한다. </p>
+		<h1>.insertAfter() 메소드</h1>
+		<p>특정 요소를 선택한 요소 뒤에 삽입한다. </p>
+		
+		<table>
+			<tr id="firstRow">
+				<td>Dog</td>
+				<td id="secondColumn">Cat</td>
+			</tr>
+		</table>
+		
+		<button id="btn_b">insertBefore</button>
+		<button id="btn_a">insertafter</button>
+	</body>
+</html>

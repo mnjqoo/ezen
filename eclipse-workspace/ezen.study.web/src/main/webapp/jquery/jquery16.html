@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		<style>
+			div { margin: 10px;}
+			.content { border: 3px solid magenta;}
+			.wrapper { border: 3px dotted green;}
+		</style>
+		<script>
+		$(function(){ 
+			$("button").on("click", function(){
+				//class가 content인 각 요소를 포함하는(감싸는) 새로운 요소를 추가한다.
+				$(".content").wrap("<div class='wrapper'></div>");
+			})
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>.wrap() 메소드</h1>
+		<p>선택한 요소를 포함하는(감싸는) 각각의 새로운 새로운 요소를 추가한다. </p>
+		
+		<div class="content">첫번째 컨텐츠입니다.</div>
+		<div class="content">두번째 컨텐츠입니다.</div>
+		
+		<button>div 요소 추가하기</button>
+	</body>
+</html>

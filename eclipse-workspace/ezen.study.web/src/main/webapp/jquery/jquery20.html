@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		
+		<script>
+		$(function(){ 
+			$("button").on("click", function(){
+				//클래스가 content인 요소 중에서 class가 first, third인 요소를 모두 삭제한다.
+				//$(".content").remove(); : 모두 삭제
+				$(".content").remove(".first, .third");
+			})
+			
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>.remove() 메소드</h1>
+		<p>선택한 요소를 DOM Tree에서 삭제한다.</p>
+		<p>이때 삭제되는 요소와 관련된 JQuery 데이터나 이벤트도 모두 함께 삭제된다. </p>
+		
+		<div>
+			<div class="content first">첫번째 아이템</div>
+			<div class="content second">두번째 아이템</div>
+			<div class="content third">세번째 아이템</div>
+		</div>
+		
+		<button>요소 삭제하기</button>
+	</body>
+</html>
