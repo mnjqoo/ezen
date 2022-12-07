@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../../js/jquery-3.6.1.js"></script>
+		<style>
+		#divBox {
+			width: 200px;
+			height: 500px;
+			background-color: #F6CECE;
+			border: 10px dotted #D0FA58;
+			margin-top: 20px;
+		}
+		</style>
+		<script>
+		$(function(){
+			$("#btnToggle").on("click", function(){
+				$("#divBox").slideToggle(3000);
+			});
+			$("#btnStop").on("click", function(){
+				$("#divBox").stop();
+			});
+			$("#btnFinish").on("click", function(){
+				$("#divBox").finish();
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<h1>이펙트 효과 정지와 중지</h1>
+		<p>.stop(): 선택한 요소에서 실행중인 모든 이펙트 효과를 즉시 중지시킨다.(그 상태로 멈춤)</p>
+		<p>.finish(): 거기에 더해서 선택한 요소가 포함된 큐까지 제거하여 모든 이펙트 효과를 전부 종료시킨다.</p>
+		
+		<button id="btnToggle">이펙트 효과 토글</button>
+		<button id="btnStop">이펙트 효과 중지(Stop)</button>
+		<button id="btnFinish">이펙트 효과 중지(Finish)</button>
+		<div id="divBox"></div>
+		
+		
+	</body>
+</html>

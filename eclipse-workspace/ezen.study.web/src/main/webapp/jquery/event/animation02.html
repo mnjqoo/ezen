@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../../js/jquery-3.6.1.js"></script>
+		<style>
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: #F6CECE;
+			position: absolute;
+			margin-top: 20px;
+		}
+		</style>
+		<script>
+		$(function(){
+			$("button").on("click", function(){
+				$("div").animate({left: "800px"})
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<h1>애니메이션 효과</h1>
+		<button>Start Animation</button>
+		<p>HTML 요소의 위치를 이동시킵니다.
+		<div></div>
+		
+	</body>
+</html>

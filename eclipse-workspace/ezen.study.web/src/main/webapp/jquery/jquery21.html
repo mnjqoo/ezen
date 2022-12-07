@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		
+		<script>
+		$(function(){ 
+			$("#btnSetting").on("click", function(){
+				$("#word").attr("title", "Hello").css("color", "green");
+			});
+			$("#btnRemove").on("click", function(){
+				$("#word").removeAttr("title").css("color", "blue");
+			});
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>.attr() 메소드</h1>
+		<h1><p>지금 보시고 있는 <span id="word">글자</span>에 title 속성을 설정합니다.</p></h1>
+		
+		<p>아래에 있는 버튼을 누르신 후에 마우스를 단어 위로 올려놓아보세요.</p>
+		
+		
+		<button id="btnSetting">속성값 설정하기</button>
+		<button id="btnRemove">속성값 제거하기</button>
+	</body>
+</html>

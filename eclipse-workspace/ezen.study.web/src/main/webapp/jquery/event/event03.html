@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../../js/jquery-3.6.1.js"></script>
+		<style>
+		#text {
+			background-color: #6AAFE6;
+			border: 2px dashed magenta;
+			padding: 20px;
+			color: #FFF;
+		}
+		</style>
+		<script>
+		$(function(){
+			$("#btnShow").on("click", function(){
+				$("#text").show();
+			});
+			$("#btnHide").on("click", function(){
+				$("#text").hide();
+			});
+			
+			$("#btnShow2").on("click", function(){
+				$("#text").show(3000); //3초에 걸쳐서 보여준다.
+			});
+			$("#btnHide2").on("click", function(){
+				$("#text").hide("fast"); //빠르게 아래에서 위로 숨긴다.
+			});
+			$("#btnToggle").on("click", function(){
+				$("#text").toggle(3000); //접었다 폈다 할 수 있다.
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<h1>요소의 표시와 숨김</h1>
+		<button id="btnShow">요소 보이기</button>
+		<button id="btnHide">요소 숨기기</button>
+		<p>CSS의 display 속성값을 none으로 설정하면 웹페이지의 레이아웃에서 사라집니다.</p>
+		<p id="text">지금 보시는 글자들이 숨겨지거나 나타날겁니다.</p>
+		
+		<button id="btnShow2">요소 보이기(시간)</button>
+		<button id="btnHide2">요소 숨기기(시간)</button>
+		
+		<button id="btnToggle">요소 보이기(toggle)</button>
+	</body> 
+</html>

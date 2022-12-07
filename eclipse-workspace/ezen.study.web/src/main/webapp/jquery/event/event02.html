@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../../js/jquery-3.6.1.js"></script>
+		<style>
+			button {
+				margin: 20px;
+				padding: 20px;
+				background-color: #6AAFE5;
+				color: #FFEEE4;
+				font-size: 34px;
+				box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+				border-radius: 15px;
+			}
+		</style>
+		<script>
+		$(function(){
+			$("body").on({
+				click: function(){
+					$("#text").html("버튼을 클릭했습니다.");
+				}
+			}, "#btn"); //id가 btn인 요소한테 function을 연결한다.
+		});
+		</script>
+	</head>
+	<body>
+		<h1>이벤트 연결</h1>
+		<button id="btn">버튼을 클릭 해보십시오!</button>
+		<button>저도 버튼입니다.</button>
+		<p id="text"></p>
+	</body>
+</html>

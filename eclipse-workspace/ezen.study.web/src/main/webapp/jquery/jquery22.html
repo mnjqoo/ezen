@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../js/jquery-3.6.1.js"></script>
+		
+		<script>
+		$(function(){ 
+			$("#btnSetting").on("click", function(){
+				$("input[value='css']").prop({checked:true});
+			});
+			$("#btnRemove").on("click", function(){
+				$("input[value='css']").prop({checked:false});
+			});
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h1>.prop() 메소드</h1>
+		
+		<form>
+			<input type="checkbox" name="lecture" value="html" checked/>HTML<br/>
+			<input type="checkbox" name="lecture" value="css"/>CSS<br/>
+			<input type="checkbox" name="lecture" value="jquery"/>JQUERY<br/>
+			
+		</form>
+		
+		<button id="btnSetting">CSS에 프로퍼티 값을 설정하기</button>
+		<button id="btnRemove">CSS에 프로퍼티 값을 제거하기</button>
+	</body>
+</html>

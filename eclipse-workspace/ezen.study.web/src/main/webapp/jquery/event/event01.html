@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../../js/jquery-3.6.1.js"></script>
+		<style>
+			button {
+				margin: 20px;
+				padding: 20px;
+				background-color: #6AAFE5;
+				color: #FFEEE4;
+				font-size: 34px;
+				box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+				border-radius: 15px;
+			}
+		</style>
+		<script>
+		$(function(){
+			$("button").on({ //모든 버튼 요소에 적용
+				mouseenter: function(){
+					$("#text").append("<h3>마우스가 버튼 위에 올라갔습니다.</h3>")
+				},
+				click: function(){
+					$("#text").append("<h2>마우스를 클릭했습니다.</h2>")
+				},
+				mouseleave: function(){
+					$("#text").append("<h1>마우스가 집으로 돌아갔습니다.</h1>")
+				}
+			});
+			$("#btn").click(function(event){});
+			$("#btn").bind("click", function(event){});
+			$("#btn").on("click", function(event){});
+			$("body").on({"click": function(event){}}, "#btn");
+			$("body").on("click", "#btn", function(event){});
+		});
+		</script>
+	</head>
+	<body>
+		<h1>.on() 메소드</h1>
+		<button id="btn">마우스를 버튼 위에 올려놓거나 클릭 해보십시오!</button>
+		<button>저도 버튼입니다.</button>
+		<p id="text"></p>
+	</body>
+</html>

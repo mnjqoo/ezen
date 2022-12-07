@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="../../js/jquery-3.6.1.js"></script>
+		<style>
+		#divBox {
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			border: 6px solid magenta;
+			margin: 30px;
+		}
+		</style>
+		<script>
+		$(function(){
+			$("#btnFadeIn").on("click", function(){
+				$("#divBox").fadeIn();
+			});
+			$("#btnFadeOut").on("click", function(){
+				$("#divBox").fadeOut(); 
+			});
+			$("#btnFadeIn2").on("click", function(){
+				$("#divBox").fadeIn(3000);
+			});
+			$("#btnFadeOut2").on("click", function(){
+				$("#divBox").fadeOut(3000); 
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<h1>Fade in. Fade out</h1>
+		<button id="btnFadeIn">Fade in</button>
+		<button id="btnFadeOut">Fade out</button>
+		<button id="btnFadeIn2">Fade in</button>
+		<button id="btnFadeOut2">Fade out</button>
+		<div id="divBox"></div>
+		<p>jQuery에서 페이드 효과는 css opacity 속성값을 빠르게 변경하여 표현합니다.</p>
+	</body> 
+</html>
