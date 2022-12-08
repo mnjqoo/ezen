@@ -17,16 +17,21 @@
 		<script>
 		$(function(){
 			$("button").on("click", function(){
-				$("div").animate({left: "800px"});
+				$("#divBox").animate({
+					left: "+=100px",
+					width: "+=100px",
+					height: "+=100px"
+					});
 			});
 		});
 		</script>
 	</head>
 	<body>
 		<h1>애니메이션 효과</h1>
+		<p>아래의 버튼을 계속 눌러보세요.</p> <br/>
 		<button>Start Animation</button>
-		<p>HTML 요소의 위치를 이동시킵니다.</p>
-		<div></div>
+		<hr/>
+		<div id="divBox"></div>
 		
 	</body>
 </html>
