@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>게시글 쓰기</title>
+	</head>
+	<body>
+		<h1>게시글 쓰기</h1>
+		<form action="/bbs-post" method="post">
+			이름: <input type="text" name="NAME" placeholder="이름을 입력하세요"/><br/>
+			제목: <input type="text" name="TITLE" placeholder="제목을 입력하세요"/><br/>
+			내용: <textarea cols="100" rows="8" name="CONTENT" placeholder="내용을 입력하세요"></textarea><br/>
+			<input type="reset" value="다시입력"/>
+			<input type="submit" value="입력완료"/>
+		</form>
+	</body>
+</html>

@@ -45,22 +45,4 @@
   	<servlet-name>personal-info-servlet</servlet-name>
   	<url-pattern>/pinfo-result</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>animal-servlet</servlet-name>
-  	<servlet-class>ch04.AnimalServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>animal-servlet</servlet-name>
-  	<url-pattern>/ptest/animal</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>result-servlet</servlet-name>
-  	<servlet-class>ch04.ResultServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>result-servlet</servlet-name>
-  	<url-pattern>/ptest/result</url-pattern>
-  </servlet-mapping>
 </web-app>
