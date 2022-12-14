@@ -63,4 +63,56 @@
   	<servlet-name>result-servlet</servlet-name>
   	<url-pattern>/ptest/result</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>divider-servlet</servlet-name>
+  	<servlet-class>ch05.DividerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>divider-servlet</servlet-name>
+  	<url-pattern>/divider</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>fibonacci-servlet</servlet-name>
+  	<servlet-class>ch06.FibonacciServlet</servlet-class>
+  	<load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>fibonacci-servlet</servlet-name>
+  	<url-pattern>/fibonacci</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>yourname-servlet</servlet-name>
+  	<servlet-class>ch06.YourNameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>yourname-servlet</servlet-name>
+  	<url-pattern>/greeting</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Exception 타입별로 에러 페이지를 등록한다. -->
+  <!-- (page attirbute의 errorPage attribute에 지정한 에러 페이지가 더 우선권을 갖는다.) -->
+  <error-page>
+  	<exception-type>java.lang.NumberFormatException</exception-type>
+  	<location>/errorPage/NumberFormatError.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<exception-type>java.lang.ArithmeticException</exception-type>
+  	<location>/errorPage/ArithmeticExceptionError.jsp</location>
+  </error-page>
+  
+  <!-- HTTP 상태 코드별로 에러페이지를 등록한다.-->
+  <!-- (타입별로 등록된 에러페이지가 우선권을 갖는다.) -->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/errorPage/NotFoundExceptionError.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/errorPage/ServerInternalError.jsp</location>
+  </error-page>
 </web-app>

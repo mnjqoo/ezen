@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page errorPage="DataError.jsp" %>
+<%@ page errorPage="DataError.jsp" %> <%//web.xml에 쓴 errorPage보다 우선순위가 높다. %>
 <% response.setStatus(200); %> <%//인위적으로 HTTP 상태 코드 값을 200(정상)으로 바꾼다. %>
 <%
 int num1 = 0, num2 = 0, sum = 0;
