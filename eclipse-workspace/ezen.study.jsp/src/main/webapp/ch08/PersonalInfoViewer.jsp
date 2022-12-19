@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="ch08.PersonalInfo" %>
 <!DOCTYPE html>
-<html> 
+<html>
 	<head>
 		<meta charset="UTF-8">
 		<title>회원 정보</title>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> 
+    pageEncoding="UTF-8"%>
 <%
 //scope = request
 //자바빈 객체가 request 데이터의 영역에 저장되도록 만든다.
