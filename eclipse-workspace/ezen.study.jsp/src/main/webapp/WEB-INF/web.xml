@@ -92,6 +92,15 @@
   	<url-pattern>/greeting</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>pinfo-servlet</servlet-name>
+  	<servlet-class>ch08.PersonalInfoSaver</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>pinfo-servlet</servlet-name>
+  	<url-pattern>/pinfo</url-pattern>
+  </servlet-mapping>
+  
   <!-- Exception 타입별로 에러 페이지를 등록한다. -->
   <!-- (page attirbute의 errorPage attribute에 지정한 에러 페이지가 더 우선권을 갖는다.) -->
   <error-page>
