@@ -1,0 +1,80 @@
+@charset "UTF-8";
+#main {
+	margin: 0 60px 0 60px;
+}
+#body {
+	background-color: #AADBA4;
+	margin: 0;
+	padding: 0;
+}
+#logo {
+	height: 180px;
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-size: 320px 220px;
+	background-position: center;
+	color: #AADBA4;
+	margin-top: 20px;
+	letter-spacing: 4px;
+}
+.navbar {
+	background-color: #AADBA4;
+	border: 0;
+	letter-spacing: 4px;
+	color: #FFF;
+	min-height: 980px;
+}
+.navbar ul{
+	padding-left: 10px; 
+	list-style: none;
+}
+.navbar li{
+	padding: 0;
+	margin-top:10px;
+	border-bottom: 1px dashed #FFF;
+	
+}
+.navbar li a {
+	color: #FFF;
+	font-size: 30px;
+	padding: 0 0 1px 0;
+	display: block;
+}
+.navbar li a img {
+	width: 152px;
+	height: 44px;
+}
+#kakao {
+	margin: 20px;
+	padding: 0px;
+}
+#kakao a {
+	padding: 10px;
+	font-size: 15px;
+	color: #3e2723;
+	background-color: #ffeb3b;
+	border-radius: 20px;
+}
+#kakao a:hover {
+	text-decoration: none;
+}
+#kakao a img {
+	width: 20px;
+	height: 20px;
+}
+#deposit {
+	margin: 0 -5px 0 -5px;
+}
+#deposit p {
+	color: #FFF;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.8); 
+}
+#deposit span {
+	color: #cc3f3f;
+}
+#review_title {
+	width: 152px;
+	height: 44px;
+}

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+#myCarousel {
+	margin-top: 1000xp;
+}
+.item img {
+	width: 100%;
+}
+.carousel-caption {
+	padding-bottom : 250px;
+}
