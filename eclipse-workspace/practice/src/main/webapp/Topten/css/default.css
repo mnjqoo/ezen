@@ -1,43 +1,51 @@
 @charset "UTF-8";
+.clear {
+	content:'';
+   display:block;
+   clear:both;
+}
 body {
 	background-color: #FFF;
 }
-.container {
-	width: 1800px;
-	margin-left: 300px;
-	margin-right: 300px;
-	margin-top: 35px;
+#wrap {
+	padding: 0px 250px 0px 250px; 
+}
+.navbar {
+	width: 100%;
+	padding: 0px 250px 0px 250px;
 	background-color: #FFF;
 }
 #logo {
 	margin-bottom: 15px;
 }
-.col-sm-4 {
-	letter-spacing: 15px;
-	font-size: 24px;
-	margin-top: 0px
+.col-sm-3 {
+	margin-top: 25px
 }
-.col-sm-4 a {
-	color: #000;
-}
-.col-sm-4 a:hover {
+.col-sm-3 a:hover {
 	text-decoration: none;
 }
 #LTOPTEN {
+	color: #000;
 	font-weight: 600;
+	letter-spacing: 12px;
+	font-size: 20px;
 }
 #LMALL {
+	color: #000;
 	font-weight: lighter;
+	letter-spacing: 12px;
+	font-size: 20px;
 }
 #brand {
 	text-align: right;
 	list-style: none;
-	font-size: 16px;
+	font-size: 13px;
+	margin-top: 25px
 }
 
 #brand li {
 	display: inline;
-	margin: 0px 18px 0px 18px;
+	margin: 0px 16px 0px 16px;
 }
 #brand li a {
 	color: #c7ccdb;	
@@ -48,34 +56,34 @@ body {
 	border-top: 1px solid #c7ccdb;
 }
 .search {
-	text-align: right;
-	font-size: 20px;
+	font-size: 15px;
 	display: block;
+	border-bottom: 1px solid #000;
+	display: inline-block;
+	float: right;
+	margin-bottom: 5px;
 }
 .search input {
 	border: none;
-	border-bottom: 1px solid #000;
 	padding: 8px;
 }
 .search input::placeholder {
 	color: #000;
-	font-size: 18px;
+	font-size: 15px;
 }
 .search input:focus {
 	outline: none;
-	border-bottom: 1px solid #000;	
 }
 .search input:focus::placeholder {
 	color: #c7ccdb;
 	background-color: #FFF;
 }
-.search span {
+.search a {
 	color: #000;
-	border-bottom: 1px solid #000;
 }
 .glyphicon {
-	font-size: 30px;
-	padding: 15px;
+	font-size: 15px;
+	padding: 12px;
 }
 
 /*메뉴*/
@@ -84,49 +92,99 @@ body {
 }
 .col-sm-10 {
 	padding: 0px;
-}
-table {
-	width: 1200px;
-	margin-top: 20px;
-	background-color: #FFF;
-	text-align: left;
-}
-table td {
-	padding: 0px 25px 0px 25px;
-	width: 140px;
+	list-style: none;
 	
 }
-#mainTable td {
-	padding-bottom: 10px;
+.col-sm-10 > li {
+	display: inline-block;
+	padding: 0px 25px 0px 25px;
+	height: 35px;
+	
 }
-#mainTable td a {
-	font-size: 17px;
+.col-sm-10 > li > a{
 	color: #000;
+	display: block;
 }
-#mainTable td a:hover{
-	text-decoration: none;
-}
-.ltd {
-	width: 170px;
-}
-.subTable {
+.col-sm-10 > li > ul {
+	position: absolute;
+	margin-top: 10px;
+	padding: 0px;
+	font-size: 12px;
 	display: none;
 }
-.subTable td a {
-	font-size: 15px;
-	color: #000;
+.col-sm-10 > li > ul > li {
+	list-style: none;
 }
-.subTable td a:hober {
-	text-decoration: none;
+.col-sm-10 > li > ul a {
+	color: #000;
 }
 /*로그인카트*/
 .col-sm-2 {
 	text-align: right;
-	font-size: 15px;
+	font-size: 13px;
 }
 .col-sm-2 a {
 	color: #a2a7b4;
 }
 .col-sm-2 a:hover {
 	text-decoration: none;
+}
+
+/*footer*/
+footer{
+	background-color: #f6f6f6;
+	padding: 0px 250px 0px 250px; 
+	letter-spacing: -1px;
+	font-size: 13px;
+}
+.footer1 {
+	padding-top: 15px;
+}
+.footer1-1 {
+	margin: 0 0 0 35px;
+}
+.footer1 a {
+	color: #000;
+}
+.footer2-2  p {
+	display: inline-block;
+	color: #f68211;
+	font-size: 20px;
+	font-weight: bold;
+}
+.footer2-2  a {
+	display: inline-block;
+	color: #000;
+	float: right;
+}
+.footer3 {
+	margin-top: 20px;
+}
+.footer3-1 {
+	margin: 0 0 2px 0;
+}
+.footer3-1 p {
+	margin: 0 0 2px 0;
+}
+.footer3-2-1 {
+	display: inline-block;
+	margin-left: 68px;
+	font-size: 11px;
+	color: #FFF;
+	background-color: #2f2f2f;
+	border-radius: 10px;
+	padding: 4px 23px 4px 23px;
+}
+.footer3-2-2 {
+	display: inline-block;
+	margin-left: 15px;
+	font-size: 11px;
+	color: #FFF;
+	background-color: #2f2f2f;
+	border-radius: 10px;
+	padding: 4px 15px 4px 15px;
+}
+.footer3-3 p {
+	margin: 0 0 2px 0;
+	
 }

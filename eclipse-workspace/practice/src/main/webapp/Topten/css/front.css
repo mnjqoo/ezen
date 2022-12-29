@@ -1,10 +1,57 @@
 @charset "UTF-8";
 #myCarousel {
-	margin-top: 1000xp;
+	position: absolute;
+	left: 0px;
+	top: 165px;
+	width: 100%;
 }
-.item img {
+mainCarousel > .item img {
 	width: 100%;
 }
 .carousel-caption {
-	padding-bottom : 250px;
+	padding-bottom : 150px;
+}
+#allSize {
+	margin-top: 790px;
+	text-align: center;
+}
+
+/*추천상품*/
+#myRec {
+	margin: 20px 0px 0px 0px;
+	position: relative;
+}
+#recT > div{
+	display: inline-block;
+}
+.recTLeft #recTLeft1 {
+	display: inline-block;
+	font-size: 27px;
+}
+.recTLeft #recTLeft2 {
+	display: inline-block;
+	font-size: 13px;
+	color: #FFF;
+	background-color: #b5965f;
+	padding: 1px 3px 0px 3px;
+	margin-left: 10px;
+}
+.recTRight {
+	position: absolute;
+	right: 0px;
+}
+.recTRight > * {
+	display: inline-block;
+}
+.recTRight a {
+	color: #000;
+}
+recCarousel {
+	width: 100%;
+}
+.recCarousel > div > a {
+	display: inline-block;
+}
+.footer3-2 > div > p {
+	display: inline-block;
 }
