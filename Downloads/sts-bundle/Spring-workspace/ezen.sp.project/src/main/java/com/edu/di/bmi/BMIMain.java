@@ -11,7 +11,7 @@ public class BMIMain {
 		
 		ApplicationContext ctx = new GenericXmlApplicationContext(conf); //스프링 컨테이너가 형성된다.
 		
-		MyInfo myInfo = ctx.getBean("myinfo", MyInfo.class);
+		MyInfo myInfo = ctx.getBean("myInfo", MyInfo.class);
 		
 		myInfo.getInfo();
 	}

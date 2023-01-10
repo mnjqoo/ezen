@@ -1,0 +1,13 @@
+package com.edu.di.car.mycar1;
+
+import org.junit.Test;
+
+public class CarTest {
+	
+	@Test
+	public void 자동차_장착_타이어브랜드_테스트() {
+		Car car = new Car();
+		
+		System.out.println(car.getTireBrand());
+	}
+}

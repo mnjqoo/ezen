@@ -29,6 +29,23 @@
 		<!-- 실질적인 메뉴를 나열한다. -->
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-left">
+				<li>
+					<form class="navbar-form navbar-left" method="post" action="${contextPath}/member/login.do">
+						<c:choose>
+							<c:when test="${isLogOn == true && member != null}"> <!-- session에 저장된 값들 -->
+								<p class="navbar-text"><b>${member.name}님, 즐거운 시간 되십시오.</b></p>
+								<a href="${contextPath}/member/logout.do" class="btn btn-danger"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a>
+							</c:when>
+							<c:otherwise>
+								<div class="form-group">
+									<input type="text" class="form-control" name="id" size="12" maxlength="20" placeholder="아이디"/>
+									<input type="password" class="form-control" name="pwd" size="12" maxlength="20" placeholder="비밀번호"/>
+								</div>
+								<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> 로그인</button>
+							</c:otherwise>
+						</c:choose>
+					</form>
+				</li>
 				<li class="droopdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">기본<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -40,6 +57,24 @@
 						<li role="presentation" class="divider"></li> 
 						<li><a href="${contextPath}/exam/exam3/doD">회원정보(객체)</a></li> 
 						<li><a href="${contextPath}/exam/exam3/doE">회원정보(Map)</a></li> 
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">회원관리 <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="${contextPath}/member/loginForm.do">로그인</a></li>
+						<li><a href="${contextPath}/member/memberForm.do">회원가입</a></li>
+						<li><a href="${contextPath}/member/registerAjaxForm.do">회원가입 (Ajax)</a></li>
+						<li><a href="${contextPath}/member/listMembers.do">회원목록</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">게시글관리 <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="${contextPath}/board/boardRegisterForm">게시글 작성</a></li>
+						<li><a href="${contextPath}/board/boardList">게시글 전체 목록</a></li>
+						<li><a href="${contextPath}/member/registerAjaxForm.do">회원가입 (Ajax)</a></li>
+						<li><a href="${contextPath}/member/listMembers.do">회원목록</a></li>
 					</ul>
 				</li>
 			</ul>

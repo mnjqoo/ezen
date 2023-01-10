@@ -4,5 +4,62 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.edu.member">
-
+	
+	<resultMap id="memberResult" type="com.edu.member.dto.MemberDTO">
+		<result property="id" column="id"/>
+		<result property="pwd" column="pwd"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="joinDate" column="joinDate"/>
+	</resultMap>
+	
+	<!-- 로그인 처리 -->
+	<select id="loginById" parameterType="com.edu.member.dto.MemberDTO" resultType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		SELECT * FROM t_member WHERE id = #{id}
+		]]>
+	</select>
+	
+	<!-- 회원가입 처리 -->
+	<select id="addMember" parameterType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		INSERT INTO t_member(id, pwd, name, email, joinDate)
+		VALUES (#{id}, #{pwd}, #{name}, #{email}, sysdate())
+		]]>
+	</select>
+	
+	<!-- 회원목록 처리 -->
+	<select id="selectAllMemberList" parameterType="com.edu.member.dto.MemberDTO" resultMap="memberResult">
+		<![CDATA[
+		SELECT * FROM t_member ORDER BY joinDate DESC
+		]]>
+	</select>
+	
+	<!-- 회원수정 정보 조회 처리 -->
+	<select id="selectMember" parameterType="String" resultMap="memberResult">
+		<![CDATA[
+		SELECT * FROM t_member WHERE id = #{id}
+		]]>
+	</select>
+	
+	<!-- 회원수정 처리 -->
+	<update id="updateMember" parameterType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		UPDATE t_member SET pwd = #{pwd}, name = #{name}, email = #{email} WHERE id = #{id}
+		]]>
+	</update>
+	
+	<!-- 회원삭제 처리 -->
+	<delete id="deleteMember" parameterType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		DELETE FROM t_member WHERE id = #{id}
+		]]>
+	</delete>
+	
+	<!-- 아이디 중복 검사 나오는 값은 0/1 -->
+	<select id="idCheck" parameterType="String" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) FROM t_member WHERE id = #{id}
+		]]>
+	</select>
 </mapper>   
