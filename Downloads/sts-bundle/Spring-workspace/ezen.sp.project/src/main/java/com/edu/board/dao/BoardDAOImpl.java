@@ -1,5 +1,6 @@
 package com.edu.board.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -10,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.edu.board.dto.BoardDTO;
+import com.edu.common.util.Criteria;
 
 @Repository("boardDAO")
 public class BoardDAOImpl implements BoardDAO{
@@ -74,5 +76,39 @@ public class BoardDAOImpl implements BoardDAO{
 		return sqlSession.update(Namespace + ".update", boardDTO);
 	}
 
+	@Override
+	public int boardListTotalCount1() throws Exception { //총 게시글 수 구하기1
+		logger.info("BoardDAOImpl의 boardListTotalCount1() 시작...");
+		
+		return sqlSession.selectOne(Namespace + ".totalCount");
+	}
+
+	@Override
+	public List<BoardDTO> boardListPaging1(HashMap<String, Integer> pageList) throws Exception { //요청된 페이지에 해당하는 게시글 가져오기
+		logger.info("BoardDAOImpl의 boardListPaging1() 시작...");
+		logger.info("pageNum: " + pageList.get("pageNum"));
+		
+		//sql의 limit에는 사칙연산을 사용할 수 없기 때문에 미리 계산을 해서 넘겨준다.
+		int pageNum = pageList.get("pageNum");
+		int startRow = (pageNum - 1) * pageList.get("pageSize");
+		pageList.put("startRow", startRow);
+		
+		return sqlSession.selectList(Namespace + ".boardListPaging1", pageList);
+	}
+
+	@Override
+	public int boardListTotalCount2(Criteria cri) throws Exception { //총 게시글 수 구하기2
+		logger.info("BoardDAOImpl의 boardListTotalCount2() 시작...");
+		
+		return sqlSession.selectOne(Namespace + ".totalCount2", cri);
+	}
+
+	@Override
+	public List<BoardDTO> boardListPaging2(Criteria cri) throws Exception { //요청된 페이지에 해당하는 게시글 목록 가져오기2
+		logger.info("BoardDAOImpl의 boardListPaging2() 시작...");
+		
+		return sqlSession.selectList(Namespace + ".boardListPaging2", cri);
+	}
+	
 	
 }

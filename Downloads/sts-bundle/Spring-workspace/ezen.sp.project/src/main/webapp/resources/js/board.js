@@ -3,7 +3,7 @@
  */
  
  
- function fn_boardRegister() { //게시글 등록
+ function fn_boardRegister(flag) { //게시글 등록
  
  	//게시글 등록 화면에서 입력한 값을 가져온다.
  	
@@ -32,22 +32,39 @@
  		$("#content").focus();
  		return false;
  	}
- 	
- 	$.ajax({
- 		type: "POST",
- 		url: "/board/boardRegister",
- 		data: {subject : subject, writer : writer, content : content},
- 		success: function(data) {
- 			if(data == "Y") {
- 				alert("게시글을 등록하였습니다.");
- 				//게시글 등록 완료 후 게시글 목록으로 이동한다.
- 				location.href = "/board/boardList";
- 			}
- 		},
- 		error: function(data) {
- 			alert("게시글 등록에 실패했습니다.");
- 		}
- 	});
+ 	if(flag == 0){
+	 	$.ajax({
+	 		type: "POST",
+	 		url: "/board/boardRegister",
+	 		data: {subject : subject, writer : writer, content : content},
+	 		success: function(data) {
+	 			if(data == "Y") {
+	 				alert("게시글을 등록하였습니다.");
+	 				//게시글 등록 완료 후 게시글 목록으로 이동한다.
+	 				location.href = "/board/boardList";
+	 			}
+	 		},
+	 		error: function(data) {
+	 			alert("게시글 등록에 실패했습니다.");
+	 		}
+	 	});
+	 } else if(flag == 1) {
+	 	$.ajax({
+	 		type: "POST",
+	 		url: "/board/boardRegister",
+	 		data: {subject : subject, writer : writer, content : content},
+	 		success: function(data) {
+	 			if(data == "Y") {
+	 				alert("게시글을 등록하였습니다.");
+	 				//게시글 등록 완료 후 게시글 목록으로 이동한다.
+	 				location.href = "/board/boardList1";
+	 			}
+	 		},
+	 		error: function(data) {
+	 			alert("게시글 등록에 실패했습니다.");
+	 		}
+	 	});
+	 }
  }
  
  function fn_boardDelete(bno) { //게시글 삭제
@@ -101,9 +118,9 @@
  	}
  }
  
- function fn_boardUpdate(bno) { //게시글 수정하기
+ function fn_boardUpdate(bno, flag) { //게시글 수정하기
  
- 	//게시글 등록 화면에서 입력한 값을 가져온다.
+ 	//게시글 수정 화면에서 입력한 값을 가져온다.
  	
  	let subject = $("#subject").val();
  	let writer = $("#writer").val();
@@ -132,19 +149,25 @@
  	}
  	
  	
- 	$.ajax({
- 		type: "POST",
- 		url: "/board/boardUpdate",
- 		data: {bno: bno, subject : subject, writer : writer, content : content},
- 		success: function(data) {
- 			if(data == "Y") {
- 				alert("게시글을 수정하였습니다.");
- 				//게시글 수정 완료 후 게시글 목록으로 이동한다.
- 				location.href = "/board/boardList";
- 			}
- 		},
- 		error: function(data) {
- 			alert("게시글 수정에 실패했습니다.");
- 		}
- 	});
+	 	$.ajax({
+	 		type: "POST",
+	 		url: "/board/boardUpdate",
+	 		data: {bno: bno, subject : subject, writer : writer, content : content},
+	 		success: function(data) {
+	 			if(data == "Y") {
+	 				alert("게시글을 수정하였습니다.");
+	 				//게시글 수정 후 상세페이지로 이동한다.
+	 				fn_boardDetail(bno);
+	 			}
+	 		},
+	 		error: function(data) {
+	 			alert("게시글 수정에 실패했습니다.");
+	 		}
+	 	});
+ }
+ 
+ function fn_boardDetail(bno) {
+ 
+ 	location.href="/board/boardDetail?bno=" + bno + "&flag=2"; //상세페이지로 가면 조회수가 증가하는데...?
+ 
  }

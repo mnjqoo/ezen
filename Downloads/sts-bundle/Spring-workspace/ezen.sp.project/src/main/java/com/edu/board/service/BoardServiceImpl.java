@@ -1,5 +1,6 @@
 package com.edu.board.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.edu.board.dao.BoardDAOImpl;
 import com.edu.board.dto.BoardDTO;
+import com.edu.common.util.Criteria;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
@@ -62,6 +64,35 @@ public class BoardServiceImpl implements BoardService {
 		logger.info("BoardServiceImpl의 boardUpdate() 처리 시작..." );
 		
 		return boardDAO.boardUpdate(boardDTO);
+	}
+
+	@Override
+	public int boardListTotalCount1() throws Exception { //총 게시글 수 구하기 1 
+		logger.info("BoardServiceImpl의 boardListTotalCount1() 처리 시작..." );
+		
+		return boardDAO.boardListTotalCount1();
+	}
+
+	@Override
+	public List<BoardDTO> boardListPaging1(HashMap<String, Integer> pageList) throws Exception { //요청된 페이지수에 해당하는 게시글 목록을 보여주기
+		logger.info("BoardServiceImpl의 boardListPaging1() 불러오기..." );
+		System.out.println("pageNum: " + pageList.get("pageNum"));
+		System.out.println("pageSize: " + pageList.get("pageSize"));
+		return boardDAO.boardListPaging1(pageList);
+	}
+	
+	@Override
+	public int boardListTotalCount2(Criteria cri) throws Exception { //총 게시글 수 구하기 2
+		logger.info("BoardServiceImpl의 boardListTotalCount2() 처리 시작..." );
+		
+		return boardDAO.boardListTotalCount2(cri);
+	}
+	
+	@Override
+	public List<BoardDTO> boardListPaging2(Criteria cri) throws Exception { //요청된 페이지에 해당하는 게시글 목록 가져오기2
+		logger.info("BoardServiceImpl의 boardListPaging2() 처리 시작..." );
+		
+		return boardDAO.boardListPaging2(cri);
 	}
 
 	

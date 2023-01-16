@@ -57,6 +57,12 @@
 						<li role="presentation" class="divider"></li> 
 						<li><a href="${contextPath}/exam/exam3/doD">회원정보(객체)</a></li> 
 						<li><a href="${contextPath}/exam/exam3/doE">회원정보(Map)</a></li> 
+						<li role="presentation" class="divider"></li> 
+						<li><a href="${contextPath}/util/zipcode/address">주소검색 (Daum API)</a></li> 
+						<li><a href="${contextPath}/util/datepicker/datepicker">날짜 선택</a></li> 
+						<li role="presentation" class="divider"></li> 
+						<li><a href="${contextPath}/util/selectrow/selectRow1">row와 column 선택1</a></li> 
+						<li><a href="${contextPath}/util/selectrow/selectRow2">row와 column 선택2</a></li> 
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -73,8 +79,8 @@
 					<ul class="dropdown-menu">
 						<li><a href="${contextPath}/board/boardRegisterForm">게시글 작성</a></li>
 						<li><a href="${contextPath}/board/boardList">게시글 전체 목록</a></li>
-						<li><a href="${contextPath}/member/registerAjaxForm.do">회원가입 (Ajax)</a></li>
-						<li><a href="${contextPath}/member/listMembers.do">회원목록</a></li>
+						<li><a href="${contextPath}/board/boardList1">게시글 전체 목록(paging 1)</a></li>
+						<li><a href="${contextPath}/board/boardList2">게시글 전체 목록(paging 2)</a></li>
 					</ul>
 				</li>
 			</ul>

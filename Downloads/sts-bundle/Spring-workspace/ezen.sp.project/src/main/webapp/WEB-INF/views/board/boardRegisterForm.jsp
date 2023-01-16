@@ -40,7 +40,8 @@
 				<div class="form-group">
 					<div class="col-sm-offset-4 left">
 						<button type="reset" class="btn btn-warning">다시 입력</button>
-						<button type="button" class="btn btn-primary" onclick="fn_boardRegister();">게시글 등록</button>
+						<h1>${flag}</h1>
+						<button type="button" class="btn btn-primary" onclick="fn_boardRegister(${flag});">게시글 등록</button>
 					</div>
 				</div>
 			</form>

@@ -61,4 +61,35 @@
 		UPDATE t_board SET subject = #{subject}, writer = #{writer}, content = #{content}, reg_date = now() WHERE bno = #{bno};
 		]]>
 	</update>
+	
+	<!-- boardListTotalCount1() -->
+	<select id="totalCount" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) FROM t_board;
+		]]>
+	</select>
+	
+	<!-- boardListPaging1() -->
+	<select id="boardListPaging1" parameterType="hashmap" resultType="com.edu.board.dto.BoardDTO">
+		<![CDATA[
+		SELECT * FROM t_board ORDER BY bno DESC LIMIT #{startRow}, #{pageSize};
+		]]>
+	</select>
+	
+	<!-- boardListTotalCount2() -->
+	<select id="totalCount2" parameterType="com.edu.common.util.Criteria" resultType="Integer">
+		<![CDATA[
+		SELECT COUNT(*) FROM t_board WHERE 1 = 1;
+		]]>
+	</select>
+	
+	<!-- boardListPaging1() -->
+	<select id="boardListPaging2" parameterType="com.edu.common.util.Criteria" resultType="com.edu.board.dto.BoardDTO">
+		<![CDATA[
+		SELECT bno, subject, content, writer, reg_date, readCount
+		FROM (SELECT bno, subject, content, writer, reg_date, readCount, ROW_NUMBER() OVER(ORDER BY bno desc) AS rNUM FROM t_board) brd
+		WHERE rNUM BETWEEN (#{perPageNum} * #{page} - 9) and (#{perPageNum} * #{page})
+		ORDER BY bno DESC;
+		]]>
+	</select>
 </mapper>   

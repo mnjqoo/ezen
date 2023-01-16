@@ -1,5 +1,6 @@
 package com.edu.board.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -12,12 +13,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.edu.board.dao.BoardDAO;
 import com.edu.board.dao.BoardDAOImpl;
 import com.edu.board.dto.BoardDTO;
 import com.edu.board.service.BoardServiceImpl;
+import com.edu.common.util.Criteria;
+import com.edu.common.util.PageMaker;
 
 @Controller //Bean의 대상으로 인식시키기 위해서 servlet-context.xml에 등록된다.
 @RequestMapping(value="/board/*")
@@ -28,10 +32,21 @@ public class BoardController {
 	@Inject
 	private BoardServiceImpl boardService;
 	
+	@Inject
+	private BoardDAOImpl boardDAO;
+	
 	@RequestMapping(value="/boardRegisterForm", method=RequestMethod.GET)
-	public String boardRegisterForm() { //게시글 작성 폼
+	public String boardRegisterForm(Model model, HttpServletRequest request) { //게시글 작성 폼
 		logger.info("BoardController의 게시글 작성 폼 불러오기...");
 		
+		System.out.println("flag: " + Integer.parseInt((String) request.getParameter("flag")));
+		
+		if(Integer.parseInt((String) request.getParameter("flag")) == 1) {
+			model.addAttribute("flag", Integer.parseInt((String) request.getParameter("flag")));
+		} else if(Integer.parseInt((String) request.getParameter("flag")) == 0) {
+			model.addAttribute("flag", Integer.parseInt((String) request.getParameter("flag")));
+		}
+		System.out.println(model.getAttribute("flag"));
 		return "/board/boardRegisterForm";
 	}
 	
@@ -62,8 +77,9 @@ public class BoardController {
 	public String boardDetail(Model model, HttpServletRequest request) throws Exception { //게시글 상세페이지 불러오기
 		logger.info("BoardController의 boardDetail 불러오기... bno=" + request.getParameter("bno"));
 		
-		BoardDAO boardDAO = new BoardDAOImpl();
-		boardDAO.updateReadCount(Integer.parseInt((String) request.getParameter("bno")));
+		if(request.getParameter("flag") == null) {
+			boardDAO.updateReadCount(Integer.parseInt((String) request.getParameter("bno")));
+		}
 		
 		BoardDTO boardDTO = boardService.boardDetail(Integer.parseInt((String) request.getParameter("bno")));
 		model.addAttribute("boardDetail", boardDTO);
@@ -104,5 +120,51 @@ public class BoardController {
 		} else { //게시글 수정 실패
 			return "N";
 		}
+	}
+	
+	@RequestMapping(value="/boardList1", method=RequestMethod.GET)
+	public ModelAndView boardList1(Model model, @RequestParam(defaultValue="1") int pageNum, @RequestParam(defaultValue="10") int pageSize) throws Exception { //게시글 목록 불러와서 게시글 목록 창으로 넘기기
+		logger.info("BoardController의 boardList1 불러오기...");
+		
+		//받은 페이지 상태가 두개이고 Mapper에서는 파라미터를 2개이상 받지 않기 때문에 hashmap 형태로 담는다.
+		HashMap<String, Integer> pageList = new HashMap<String, Integer>();
+		pageList.put("pageNum", pageNum);
+		pageList.put("pageSize", pageSize);
+		
+		for(int key : pageList.values()) {
+			System.out.println(key);
+		}
+		
+		int totalCount = boardService.boardListTotalCount1(); //전체 게시글의 수를 구한다. 
+		
+		//요청된 페이지에 해당하는 게시글을 가져온다.
+		List<BoardDTO> boardList = boardService.boardListPaging1(pageList);
+		
+		ModelAndView mav = new ModelAndView("/board/boardList1");
+		
+		mav.addObject("pageNum", pageNum); //현재 페이지 번호
+		mav.addObject("boardList", boardList); //현재 페이지 번호에 해당하는 게시글 목록
+		mav.addObject("totalCount", totalCount); //전체 게시글 수
+		return mav;
+	}
+	
+	@RequestMapping(value="/boardList2", method=RequestMethod.GET)
+	public ModelAndView boardList2(Criteria cri) throws Exception { //게시글 목록 불러와서 게시글 목록 창으로 넘기기2
+		logger.info("BoardController의 boardList2 불러오기...");
+		
+		ModelAndView mav = new ModelAndView("board/boardList2");
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		
+		//게시글의 전체 갯수를 구해서 pageMaker의 totalCount에ㅔ 저장한다.
+		pageMaker.setTotalCount(boardService.boardListTotalCount2(cri));
+		
+		List<BoardDTO> boardList = boardService.boardListPaging2(cri);
+		
+		mav.addObject("boardList", boardList);
+		mav.addObject("pageMaker", pageMaker);
+		
+		return mav;
 	}
 }

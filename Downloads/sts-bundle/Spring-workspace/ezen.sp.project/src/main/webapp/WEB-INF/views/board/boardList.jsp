@@ -31,7 +31,7 @@ if(session.getAttribute("isLogOn") == null || session.getAttribute("member") == 
 				</div>
 				
 				<p align="center">
-					<button type="button" class="btn btn-primary" onclick="location.href='/board/boardRegisterForm'">게시글 작성하기</button>
+					<button type="button" class="btn btn-primary" onclick="location.href='/board/boardRegisterForm?flag=0'">게시글 작성하기</button>
 				</p>
 				
 				<table class="table table-bordered table-striped table-hover">

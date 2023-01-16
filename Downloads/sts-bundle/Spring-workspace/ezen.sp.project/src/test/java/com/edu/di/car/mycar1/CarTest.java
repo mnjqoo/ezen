@@ -1,6 +1,6 @@
 package com.edu.di.car.mycar1;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class CarTest {
 	
