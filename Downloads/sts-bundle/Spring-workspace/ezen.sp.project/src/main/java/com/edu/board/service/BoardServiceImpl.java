@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.edu.board.dao.BoardDAOImpl;
 import com.edu.board.dto.BoardDTO;
 import com.edu.common.util.Criteria;
+import com.edu.common.util.SearchCriteria;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
@@ -95,5 +96,17 @@ public class BoardServiceImpl implements BoardService {
 		return boardDAO.boardListPaging2(cri);
 	}
 
+	@Override
+	public int boardListTotalCount3(SearchCriteria sCri) throws Exception { //총 게시글 수 구하기3
+		logger.info("BoardServiceImpl의 boardListPaging3() 처리 시작..." );
+		
+		return boardDAO.boardListTotalCount3(sCri);
+	}
 	
+	@Override
+	public List<BoardDTO> boardListPaging3(SearchCriteria sCri) throws Exception { //조건에 해당하는 게시글 목록 가져오기3
+		logger.info("BoardServiceImpl의 boardListPaging3() 처리 시작..." );
+		
+		return boardDAO.boardListPaging3(sCri);
+	}
 }

@@ -19,10 +19,11 @@ if(session.getAttribute("isLogOn") == null || session.getAttribute("member") == 
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>게시글 목록1</title>
+		<title>게시글 목록2</title>
 		<script src="${contextPath}/resources/js/board.js"></script>
 	</head>
 	<body>
+	
 		<jsp:include page="../common/topMenu.jsp" flush="false"></jsp:include>
 		
 		<div class="container">
@@ -39,6 +40,7 @@ if(session.getAttribute("isLogOn") == null || session.getAttribute("member") == 
 				
 				<h1>현재 페이지: ${pageMaker.cri.getPage()}</h1>
 				
+				<!-- 게시글 목록 영역 -->
 				<table class="table table-bordered table-striped table-hover">
 					<thead>
 						<tr class="info">
@@ -64,32 +66,32 @@ if(session.getAttribute("isLogOn") == null || session.getAttribute("member") == 
 					</tbody>
 				</table>
 			</form>
-				
-				<div align="center"> <!-- 페이지 숫자를 보여주는 영역 -->
-				
-					<ul class="btn-group pagination">
-						<c:if test="${pageMaker.prev}">
-							<li>
-								<a href="<c:url value='/board/boardList2?page=${pageMaker.startPage - 1}'/>"><span class="glyphicon glyphicon-chevron-left"></span></a>
-							</li>
-						</c:if>
-						
-						<c:forEach var="pageNum" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-							<li>
-								<a href="<c:url value='/board/boardList2?page=${pageNum}'/>">${pageNum}</a>
-							</li>
-						</c:forEach>
-						
-						<c:if test="${pageMaker.next && pageMaker.endPage > 10}">
-							<li>
-								<a href="<c:url value='/board/boardList2?page=${pageMaker.endPage + 1}'/>"><span class="glyphicon glyphicon-chevron-right"></span></a>
-							</li>
-						</c:if>
-					</ul>
-				</div>
 			
+				
+			<div align="center"> <!-- 페이지 숫자를 보여주는 영역 -->
+				<ul class="btn-group pagination">
+					<c:if test="${pageMaker.prev}">
+						<li>
+							<a href="<c:url value='/board/boardList2?page=${pageMaker.startPage - 1}'/>"><span class="glyphicon glyphicon-chevron-left"></span></a>
+						</li>
+					</c:if>
+						
+					<c:forEach var="pageNum" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+						<li>
+							<a href="<c:url value='/board/boardList2?page=${pageNum}'/>">${pageNum}</a>
+						</li>
+					</c:forEach>
+						
+					<c:if test="${pageMaker.next}">
+						<li>
+							<a href="<c:url value='/board/boardList2?page=${pageMaker.endPage + 1}'/>"><span class="glyphicon glyphicon-chevron-right"></span></a>
+						</li>
+					</c:if>
+				</ul>
+			</div>
 		</div>
 		
 		<jsp:include page="../common/footer.jsp" flush="false"></jsp:include>
+		
 	</body>
 </html>

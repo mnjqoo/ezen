@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.edu.board.dto.BoardDTO;
 import com.edu.common.util.Criteria;
+import com.edu.common.util.SearchCriteria;
 
 public interface BoardService {
 
@@ -25,4 +26,8 @@ public interface BoardService {
 	public int boardListTotalCount2(Criteria cri) throws Exception; //총 게시글 수 구하기 2
 	
 	public List<BoardDTO> boardListPaging2(Criteria cri) throws Exception; //요청된 페이지에 해당하는 게시글 가져오기2
+	
+	public int boardListTotalCount3(SearchCriteria sCri) throws Exception; //총 게시글 수 구하기3
+	
+	public List<BoardDTO> boardListPaging3(SearchCriteria sCri) throws Exception; //조건에 해당하는 게시글 가져오기3
 }

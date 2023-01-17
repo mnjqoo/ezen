@@ -1,6 +1,6 @@
 package com.edu.board.controller;
 
-import java.util.HashMap;
+import java.util.HashMap; 
 import java.util.List;
 import java.util.Locale;
 
@@ -22,6 +22,7 @@ import com.edu.board.dto.BoardDTO;
 import com.edu.board.service.BoardServiceImpl;
 import com.edu.common.util.Criteria;
 import com.edu.common.util.PageMaker;
+import com.edu.common.util.SearchCriteria;
 
 @Controller //Bean의 대상으로 인식시키기 위해서 servlet-context.xml에 등록된다.
 @RequestMapping(value="/board/*")
@@ -165,6 +166,27 @@ public class BoardController {
 		mav.addObject("boardList", boardList);
 		mav.addObject("pageMaker", pageMaker);
 		
+		return mav;
+	}
+	
+	@RequestMapping(value="/boardList3", method=RequestMethod.GET)
+	public ModelAndView boardList3(SearchCriteria sCri) throws Exception { //게시글 목록 보여주기 + 검색기능
+		logger.info("BoardController의 boardList3 불러오기...");
+		
+		ModelAndView mav = new ModelAndView("/board/boardList3");
+		mav.addObject("searchType", sCri.getSearchType());
+		mav.addObject("keyword", sCri.getKeyword());
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(sCri);
+		
+		pageMaker.setTotalCount(boardService.boardListTotalCount3(sCri)); //조건에 해당하는 데이터 건수로 전체 데이터 건수를 설정한다.
+		System.out.println("찾은 데이터 건수: " + boardService.boardListTotalCount3(sCri));
+		
+		List<BoardDTO> boardList = boardService.boardListPaging3(sCri); //조건에 해당하는 데이터 목록을 가져온다.
+		
+		mav.addObject("boardList", boardList);
+		mav.addObject("pageMaker", pageMaker);
 		return mav;
 	}
 }

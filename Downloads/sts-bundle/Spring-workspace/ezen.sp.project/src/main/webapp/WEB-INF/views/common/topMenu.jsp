@@ -81,6 +81,7 @@
 						<li><a href="${contextPath}/board/boardList">게시글 전체 목록</a></li>
 						<li><a href="${contextPath}/board/boardList1">게시글 전체 목록(paging 1)</a></li>
 						<li><a href="${contextPath}/board/boardList2">게시글 전체 목록(paging 2)</a></li>
+						<li><a href="${contextPath}/board/boardList3">게시글 전체 목록(paging 3 + 검색)</a></li>
 					</ul>
 				</li>
 			</ul>

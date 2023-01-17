@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.edu.board.dto.BoardDTO;
 import com.edu.common.util.Criteria;
+import com.edu.common.util.SearchCriteria;
 
 @Repository("boardDAO")
 public class BoardDAOImpl implements BoardDAO{
@@ -21,7 +22,7 @@ public class BoardDAOImpl implements BoardDAO{
 	@Inject
 	private SqlSession sqlSession;
 	
-	private static String Namespace = "com.edu.board"; //xml의 Namespace와 동일해야한다.(대소문자 주의)
+	private static String Namespace = "com.edu.board"; //Mapper.xml의 Namespace와 동일해야한다.(대소문자 주의)
 	
 	@Override
 	public Integer getMaxBno() { //가장 큰 게시글 번호 가져오기
@@ -110,5 +111,17 @@ public class BoardDAOImpl implements BoardDAO{
 		return sqlSession.selectList(Namespace + ".boardListPaging2", cri);
 	}
 	
+	@Override
+	public int boardListTotalCount3(SearchCriteria sCri) throws Exception { //총 게시글 수 구하기3
+		logger.info("BoardDAOImpl의 boardListTotalCount3() 시작...");
+		
+		return sqlSession.selectOne(Namespace + ".boardListTotalCountSearchType", sCri);
+	}
 	
+	@Override
+	public List<BoardDTO> boardListPaging3(SearchCriteria sCri) throws Exception { //조건에 해당하는 게시글 목록 가져오기3
+		logger.info("BoardDAOImpl의 boardListPaging3() 시작...");
+		
+		return sqlSession.selectList(Namespace + ".boardListPagingSearchType", sCri);
+	}
 }
