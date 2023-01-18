@@ -84,6 +84,13 @@
 						<li><a href="${contextPath}/board/boardList3">게시글 전체 목록(paging 3 + 검색)</a></li>
 					</ul>
 				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">파일 올리기 <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="${contextPath}/util/upload/uploadForm">파일 올리기 (Form)</a></li>
+						<li><a href="${contextPath}/util/upload/uploadAjax">파일 올리기 (Ajax)</a></li>
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</div>

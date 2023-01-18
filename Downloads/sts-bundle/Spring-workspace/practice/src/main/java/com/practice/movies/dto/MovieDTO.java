@@ -1,18 +1,25 @@
 package com.practice.movies.dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import org.springframework.stereotype.Component;
 
 @Component("movieDTO")
 public class MovieDTO {
 
+	private int bno; //번호
 	private String title; //제목
 	private String genre; //장르코드
-	private Date release_date; //개봉일
-	private int rating; //평점
+	private Timestamp releaseDate; //개봉일
+	private String raiting; //평점
 	private String director; //감독
 	
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -25,17 +32,17 @@ public class MovieDTO {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public Date getRelease_date() {
-		return release_date;
+	public Timestamp getReleaseDate() {
+		return releaseDate;
 	}
-	public void setRelease_date(Date release_date) {
-		this.release_date = release_date;
+	public void setReleaseDate(Timestamp releaseDate) {
+		this.releaseDate = releaseDate;
 	}
-	public int getRating() {
-		return rating;
+	public String getRaiting() {
+		return raiting;
 	}
-	public void setRating(int rating) {
-		this.rating = rating;
+	public void setRaiting(String raiting) {
+		this.raiting = raiting;
 	}
 	public String getDirector() {
 		return director;
@@ -45,9 +52,11 @@ public class MovieDTO {
 	}
 	@Override
 	public String toString() {
-		return "MovieDTO [title=" + title + ", genre=" + genre + ", release_date=" + release_date + ", rating=" + rating
-				+ ", director=" + director + "]";
+		return "MovieDTO [bno=" + bno + ", title=" + title + ", genre=" + genre + ", releasDate=" + releaseDate
+				+ ", raiting=" + raiting + ", director=" + director + "]";
 	}
+	
+	
 	
 	
 	

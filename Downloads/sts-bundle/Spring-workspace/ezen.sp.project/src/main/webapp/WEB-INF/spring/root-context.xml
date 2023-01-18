@@ -20,7 +20,7 @@
 		</property>
 	</bean>
 
-	<bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
+	<bean id="DataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
 		<property name="driver"		value="${jdbc.driverClassName}"></property>
 		<property name="url"		value="${jdbc.url}"></property>
 		<property name="username"	value="${jdbc.username}"></property>
@@ -29,7 +29,7 @@
 
 	<!-- SqlSessionFactory는 DB와의 연결과 SQL의 실행에 대한 모든 것을 가진 객체. -->
 	<bean id="SqlSessionFactory"	class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource"	ref="dataSource"></property>
+		<property name="dataSource"	ref="DataSource"></property>
 		<property name="mapperLocations"	value="classpath:mappers/**/*Mapper.xml"></property>
 	</bean>
 

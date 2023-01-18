@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.search {
+	margin: 10px 0 10px 0;
+}
+.nav-pills {
+	position: fixed;
+	top: 40px;
+}
+.nav-pills > li > a {
+	color: #FFF;
+}
+.nav-pills > li > a:hover {
+	color: #0c0e0c;
+}
+.dropdown ul {
+	display: none;
+	list-style: none;
+}
+.dropdown > ul > li > a {
+	color: #FFF;
+	text-decoration: none;
+}

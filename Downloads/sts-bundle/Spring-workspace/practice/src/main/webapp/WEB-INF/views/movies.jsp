@@ -19,43 +19,23 @@
 
 		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-		<link href="css/default.css" rel="stylesheet" type="text/css">
 		<link href="${contextPath}/resources/css/default.css" rel="stylesheet" type="text/css">
 		<link href="${contextPath}/resources/css/front.css" rel="stylesheet" type="text/css">
-		<script>
-		$(function(){
-			$(".dropdown").on("click", function(){
-				$(this).find("ul").stop().fadeToggle(200) //stop(): 전에 작동하던 것을 멈추고 다음 것을 작동시킨다.
-			});
-		});
-		</script>
+		
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
 				<!-- 메뉴 -->
-				<nav class="col-md-3">
-					<div class="search">
-						<input type="text" placeholder="text"/>
-						<button type="submit"><span class="glyphicon glyphicon-search"></span></button>
-					</div>
-					<ul class="nav nav-pills nav-stacked">
-						<li><a href="#">section1</a></li>
-						<li><a href="#">section2</a></li>
-						<li class="dropdown"><a href="#">section3<span class="caret"></span></a>
-							<ul>
-								<li><a href="#">section3-1</a>
-								<li><a href="#">section3-2</a>
-							</ul>
-						</li>
-					</ul>
-				</nav>
+				<div class="col-md-3">
+					<jsp:include page="common/nav.jsp" flush="false"></jsp:include>
+				</div>
 				
 				<!-- 본문 -->
 				<div class="col-md-9">
 					<div id="section1"> <!-- section1 -->
 						<div>
-							<p>section1 <a href="/movie/movieList">>>></a></p>
+							<p>section1 <a href="${contextPath}/movie/movieList">>>></a></p>
 						</div>
 						<!-- 슬라이드 -->
 						<div class="carousel slide" data-ride="carousel" id="section1Carousel"> 
