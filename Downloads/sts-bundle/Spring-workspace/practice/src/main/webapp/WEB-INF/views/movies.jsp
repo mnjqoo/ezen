@@ -32,7 +32,7 @@
 				</div>
 				
 				<!-- 본문 -->
-				<div class="col-md-9">
+				<div class="col-md-9 content">
 					<div id="section1"> <!-- section1 -->
 						<div>
 							<p>section1 <a href="${contextPath}/movie/movieList">>>></a></p>

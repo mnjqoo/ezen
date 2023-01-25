@@ -8,45 +8,80 @@
 	<!-- 검색조건 -->
 	<sql id="search">
 		<if test="searchType != null">
-			<if test='searchType == "t"'>
+			<if test="searchType == 't'.toString()">
 				AND m.title LIKE CONCAT('%', #{keyword}, '%')
 			</if>
-			<if test='searchType == "g"'>
+			<if test="searchType == 'g'.toString()">
 				AND g.genre LIKE CONCAT('%', #{keyword}, '%')
 			</if>
-			<if test='searchType == "r"'>
+			<if test="searchType == 'r'.toString()">
 				AND m.rating LIKE CONCAT('%', #{keyword}, '%')
 			</if>
-			<if test='searchType == "d"'>
+			<if test="searchType == 'd'.toString()">
 				AND m.director LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 		</if>
 	</sql>
 	
+	<!-- 게시글 목록 불러오기 -->
+	<select id="movieList" parameterType="com.practice.common.util.SearchCriteria" resultType="com.practice.movie.dto.MovieDTO">
+		<![CDATA[
+		SELECT bno, title, genre, releaseDate, raiting, director
+		FROM (SELECT m.bno bno, m.title title, g.genre genre, m.releaseDate releaseDate, m.raiting raiting, m.director director, ROW_NUMBER() OVER(ORDER BY bno DESC) AS rNUM
+			  FROM movie_table m, genre_table g
+			  WHERE m.genre_code = g.genre_code
+		]]>
+		<include refid="search"/>
+		<![CDATA[
+		) brd
+		WHERE rNUM BETWEEN (#{perPageNum} * #{pageNum} - 9) and (#{perPageNum} * #{pageNum})
+		ORDER BY bno DESC;
+		]]>
+	</select>
+	
 	<!-- 총 데이터 건 수 구하기 -->
 	<select id="totalCount" parameterType="com.practice.common.util.SearchCriteria" resultType="Integer">
 		<![CDATA[
 		SELECT COUNT(*)
-		FROM movies_table m, genre_table g
+		FROM movie_table m, genre_table g
 		WHERE m.genre_code = g.genre_code
 		]]>
 		<include refid="search"/>
 		
 	</select>
 	
-	<!-- 게시글 목록 불러오기 -->
-	<select id="movieList" parameterType="com.practice.common.util.SearchCriteria" resultType="com.practice.movies.dto.MovieDTO">
+	<!-- 장르 코드 구하기 -->
+	<select id="genreCode" resultType="HashMap">
 		<![CDATA[
-		SELECT bno, title, genre, releaseDate, raiting, director
-		FROM (SELECT m.bno, m.title, g.genre, m.releaseDate, m.raiting, m.director, ROW_NUMBER() OVER(ORDER BY bno DESC) AS rNUM
-			  FROM movies_table m, genre_table g
-			  WHERE m.genre_code = g.genre_code
-		]]>
-		<include refid="search"/>
-		<![CDATA[
-		) brd
-		WHERE rNUM BETWEEN (#{perPageNum} * #{pageNum} - 4) and (#{perPageNum} * #{pageNum})
-		ORDER BY bno DESC;
+		SELECT *
+		FROM genre_table;
 		]]>
 	</select>
+	
+	<!-- 게시글 등록하기 -->
+	<insert id="movieRegister" parameterType="com.practice.movie.dto.MovieDTO">
+		<![CDATA[
+		INSERT INTO movie_table (bno, title, genre_code, releaseDate, raiting, director)
+		SELECT IFNULL(MAX(bno), 0) + 1, #{title}, #{genre}, #{releaseDate}, #{raiting}, #{director}
+		FROM movie_table;
+		]]>
+	</insert>
+	
+	<!-- bno에 해당하는 DTO객체 불러오기 -->
+	<select id="movieDetail" parameterType="int" resultType="com.practice.movie.dto.MovieDTO">
+		<![CDATA[
+		SELECT m.bno bno, m.title title, g.genre genre, m.releaseDate releaseDate, m.raiting raiting, m.director director
+		FROM movie_table m, genre_table g
+		WHERE m.genre_code = g.genre_code AND m.bno = #{bno};
+		]]>
+	</select>
+	
+	<!-- 게시글 수정하기 -->
+	<update id="movieUpdate" parameterType="com.practice.movie.dto.MovieDTO" >
+		<![CDATA[
+		UPDATE movie_table
+		SET title = #{title}, genre_code = #{genre}, releaseDate = #{releaseDate}, director = #{director}
+		WHERE bno = #{bno};
+		]]>
+	</update>
 </mapper>   

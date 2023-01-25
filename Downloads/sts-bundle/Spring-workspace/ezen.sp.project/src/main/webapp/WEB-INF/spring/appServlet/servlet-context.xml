@@ -51,8 +51,7 @@
 
 	<!-- 파일 올리기에 관한 설정 -->
 	<!-- 스프링프레임워크에 내장된 CommonsMultipartResolver를 등록한다. -->
-	<beans:bean id="multipartResolver"
-				class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 			<!-- 업로드할 파일의 최대용량 -->
 			<beans:property name="maxUploadSize" value="10485740"></beans:property>
 	</beans:bean>
@@ -62,6 +61,29 @@
 		<beans:constructor-arg value="c:/data/upload"/>
 	</beans:bean>
 	
-
+	<!-- 인터셉터 -->
+	<context:component-scan base-package="com.edu.common.interceptor"/>
+	<!-- 인터셉터 객체 생성 -->
+	<beans:bean id="LoginInterceptor" class="com.edu.common.interceptor.LoginInterceptor"></beans:bean>
+	<!-- 인터셉터 설정 -->
+	<interceptors> <!-- 인터셉터 설정 전체 틀 -->
+		<!-- 로그인을 처리하는 인터셉터 -->
+		<interceptor>
+			<!-- <mapping path="/**"/> : 모든 url에 적용하고 싶을 때 -->
+			<!-- 인터셉터에서 가로채기 예외를 사용하려면 <exclude-mapping path="/member"/>를 쓰기 전에 <mapping path=""/>가 한개라도 존재해야한다. -->
+			<mapping path="/board/boardList"/>
+			<mapping path="/board/boardList1"/>
+			<exclude-mapping path="/member"/>
+			<beans:ref bean="LoginInterceptor"/> <!-- 인터셉터에서 사용된 Bean을 지정한다. -->
+		</interceptor>
+		
+		<!-- 다국어 기능을 구현하는 인터셉터 -->
+		<interceptor>
+			<mapping path="/test/*.do"/> <!-- 특정 요청에 대해 -->
+			<mapping path="/*/*.do"/>	<!-- 모든 요청에 대해 -->
+			<beans:bean class="com.edu.common.interceptor.LocaleInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
 
 </beans:beans>

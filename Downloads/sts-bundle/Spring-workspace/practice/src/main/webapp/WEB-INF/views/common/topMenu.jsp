@@ -63,8 +63,6 @@
 						<li role="presentation" class="divider"></li> 
 						<li><a href="${contextPath}/util/selectrow/selectRow1">row와 column 선택1</a></li> 
 						<li><a href="${contextPath}/util/selectrow/selectRow2">row와 column 선택2</a></li> 
-						<li role="presentation" class="divider"></li> 
-						<li><a href="${contextPath}/test/locale.do">인터셉터</a></li> 
 					</ul>
 				</li>
 				<li class="dropdown">

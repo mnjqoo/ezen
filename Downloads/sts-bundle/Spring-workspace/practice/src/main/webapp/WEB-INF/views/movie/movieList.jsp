@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>영화 목록</title>
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 		<script src="../../js/jquery-3.6.1.js"></script>
@@ -28,25 +28,40 @@
 				<div class="col-md-3">
 					<jsp:include page="../common/nav.jsp"></jsp:include>
 				</div>
-				<div class="col-md-9">
-					<h1>${movieList.title}</h1>
-					<!-- 게시글 목록 -->
-					<table class="table table-bordered table-striped table-hober">
-						<thead>
-							<tr>
-								<td>번호</td>
-								<td>제목</td>
-								<td>장르</td>
-								<td>개봉일</td>
-								<td>평점</td>
-								<td>감독</td>
-							</tr>
-						</thead>
-						<tbody>
+				<div class="col-md-9 content">
+					<form class="form-horizontal">
+						<div align="center">
+							<h3>게시글 목록</h3>
+							<button type="button" onclick="location.href='${contextPath}/movie/movieRegisterForm'">게시글 작성</button>
+						</div>
+						<br/>
+						<!-- 게시글 목록 -->
+						<table class="table table-bordered table-striped table-hober">
+							<thead>
+								<tr>
+									<td>번호</td>
+									<td>제목</td>
+									<td>장르</td>
+									<td>개봉일</td>
+									<td>평점</td>
+									<td>감독</td>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="list" items="${movieList}">
+									<tr>
+										<td>${list.bno}</td>
+										<td><a href="${contextPath}/movie/movieDetail?bno=${list.bno}">${list.title}</a></td>
+										<td>${list.genre}</td>
+										<td>${list.releaseDate}</td>
+										<td>${list.raiting}</td>
+										<td>${list.director}</td>
+									</tr>
+								</c:forEach>
+							</tbody>
 							
-						</tbody>
-						
-					</table>
+						</table>
+					</form>	
 				</div>
 			</div>
 		</div>
