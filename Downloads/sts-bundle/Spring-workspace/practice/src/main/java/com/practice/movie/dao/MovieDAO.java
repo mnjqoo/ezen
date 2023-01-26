@@ -19,4 +19,7 @@ public interface MovieDAO {
 	public MovieDTO movieDetail(int bno) throws Exception; ////bno에 해당하는 MovieDTO객체 구하기
 	
 	public int movieUpdate(MovieDTO movieDTO) throws Exception; //게시글 수정하기
+	
+	public int movieDelete(int bno) throws Exception; //게시글 삭제하기
+	
 }

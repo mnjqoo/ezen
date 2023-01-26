@@ -1,6 +1,6 @@
 package com.practice.movie.controller;
 
-import java.util.HashMap; 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -132,6 +132,19 @@ public class MovieController {
 		System.out.println("movieDTO: " + movieDTO);
 		
 		if(movieService.movieUpdate(movieDTO) == 1) {
+			return "Y";
+		} else {
+			return "N";
+		}
+	}
+	
+	//해당bno로 게시글 삭제하기
+	@ResponseBody
+	@RequestMapping(value="/movieDelete", method=RequestMethod.POST)
+	public String movieDelete(int bno) throws Exception {
+		logger.info("MovieController의 movieDelete 처리 시작...");
+		
+		if(movieService.movieDelete(bno) == 1) {
 			return "Y";
 		} else {
 			return "N";

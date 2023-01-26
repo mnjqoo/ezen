@@ -76,3 +76,30 @@
  		}
  	});
  }
+ 
+ //게시글 삭제
+ function fn_movieDelete(bno) {
+ 
+ 	if(confirm("해당 게시글을  삭제하시겠습니까?\n\n삭제 하시려면 [확인]을 눌러주십시오.") == true) {
+ 		alert("확인을 누르셨습니다." + bno);
+ 		$.ajax ({
+ 			type: "post",
+ 			url: "/movie/movieDelete",
+ 			data: {bno: bno},
+ 			success: function(data) {
+ 				if(data == "Y") {
+ 					alert("게시글을 삭제하였습니다.");
+ 						
+ 					location.href="/movie/movieList";
+ 				}
+ 			},
+ 			error: function(data) {
+ 				alert("게시글 삭제에 실패하였습니다.");
+ 			}
+ 		});
+			
+	} else {
+		alert("게시글 삭제를 취소하셨습니다.");
+	}
+ 
+ }

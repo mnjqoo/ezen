@@ -63,5 +63,12 @@ public class MovieServiceImpl implements MovieService {
 		return movieDAO.movieUpdate(movieDTO);
 	}
 
+	@Override
+	public int movieDelete(int bno) throws Exception { //게시글 삭제하기
+		logger.info("MovieServiceImpl의 movieDelete 시작....");
+		
+		return movieDAO.movieDelete(bno);
+	}
+
 	
 }

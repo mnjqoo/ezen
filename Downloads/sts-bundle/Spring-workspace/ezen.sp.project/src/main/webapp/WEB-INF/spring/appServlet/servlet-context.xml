@@ -32,11 +32,12 @@
 	<context:component-scan base-package="com.edu.member" />
 	<context:component-scan base-package="com.edu.board" />
 	<context:component-scan base-package="com.edu.util" />
+	<context:component-scan base-package="com.edu.movie" />
 	
 	<!-- AOP 설정 -->
 	<context:annotation-config></context:annotation-config>
 	
-	<context:component-scan base-package="com.edu.common.aop"></context:component-scan>
+	<context:component-scan base-package="com.edu.common.aop"/>
 
 	<!-- Error 발생 
 	Spring AOP 사용시 The mapped controller method class 'class' in not an instance of the actual

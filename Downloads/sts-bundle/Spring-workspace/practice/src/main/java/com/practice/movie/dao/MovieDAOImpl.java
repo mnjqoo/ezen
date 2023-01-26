@@ -61,10 +61,17 @@ public class MovieDAOImpl implements MovieDAO {
 	}
 
 	@Override
-	public int movieUpdate(MovieDTO movieDTO) throws Exception {
+	public int movieUpdate(MovieDTO movieDTO) throws Exception { //게시글 수정하기
 		logger.info("MovieDAOImpl의 movieUpdate 불러오기....");
 		
 		return sqlSession.update(Namespace + ".movieUpdate", movieDTO);
+	}
+
+	@Override
+	public int movieDelete(int bno) throws Exception { //게시글 삭제하기
+		logger.info("MovieDAOImpl의 movieDelete 불러오기....");
+		
+		return sqlSession.update(Namespace + ".movieDelete", bno);
 	}
 
 }

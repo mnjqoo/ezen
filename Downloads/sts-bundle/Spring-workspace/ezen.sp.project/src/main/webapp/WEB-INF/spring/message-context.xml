@@ -11,7 +11,7 @@
    		<property name="basenames">
    			<list>
    				<!-- 패키지 locale에서 message.properties를 읽어들인다. -->
-   				<value>classpath:locale/messages</value>
+   				<value>classpath:locale/messages.properties</value>
    			</list>
    		</property>
    		<!-- 파일의 기본 인코딩을 지정한다. -->

@@ -26,11 +26,15 @@ public class LocaleInterceptor extends HandlerInterceptorAdapter{
 		logger.info("LocaleInterceptor의 preHandle");
 		logger.info("====================================");
 		
+		System.out.println(request.getParameter("locale"));
 		HttpSession session = request.getSession();
 		String locale = request.getParameter("locale"); //브라우저에서 전달한 locale 정보를 가져온다.
 		if(locale == null) { //최초 요청시
 			locale = "ko"; //locale을 한국어로 설정한다.
+		} else {
+			locale = "ko";
 		}
+		System.out.println(request.getParameter("locale"));
 		//locale속성값을 session에 저장하여 SessionLocaleResolver가 사용할 수 있게 한다.
 		session.setAttribute("org.springframework.web.servlet.i18n.SessionLocaleResolver.LOCALE", new Locale(locale));
 		

@@ -20,4 +20,5 @@ public interface MovieService {
 	
 	public int movieUpdate(MovieDTO movieDTO) throws Exception; //게시글 수정하기
 	
+	public int movieDelete(int bno) throws Exception; //게시글 삭제하기
 }

@@ -5,6 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script src="${contextPath}/resources/js/fileJs.js"></script>
+		
 		<style>
 		.fileDrop {
 			width: 120px;
@@ -20,9 +22,8 @@
 			</div>
 			<br/>
 			<div>
-				<input type="file" name="file"/>
-				<input type="submit" value="파일 올리기"/>
-				<input type="button" value="파일 삭제"/>
+				<input type="file" id="file" name="file"/>
+				<input type="button" value="파일 등록" onclick="fn_fileUpload(file);"/>
 			</div>
 		</div>
 			

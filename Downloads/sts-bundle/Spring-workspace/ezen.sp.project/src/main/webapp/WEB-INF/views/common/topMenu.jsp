@@ -65,6 +65,8 @@
 						<li><a href="${contextPath}/util/selectrow/selectRow2">row와 column 선택2</a></li> 
 						<li role="presentation" class="divider"></li> 
 						<li><a href="${contextPath}/test/locale.do">인터셉터</a></li> 
+						<li role="presentation" class="divider"></li> 
+						<li><a href="${contextPath}/util/message/message01.do">JSTL 다국어 기능</a></li> 
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -91,6 +93,12 @@
 					<ul class="dropdown-menu">
 						<li><a href="${contextPath}/util/upload/uploadForm">파일 올리기 (Form)</a></li>
 						<li><a href="${contextPath}/util/upload/uploadAjax">파일 올리기 (Ajax)</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">영화관 좌석 예약 <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="${contextPath}/movie/seatReservation?movieID=1">영화관 좌석 예약</a></li>
 					</ul>
 				</li>
 			</ul>
