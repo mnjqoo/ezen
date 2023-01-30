@@ -11,7 +11,14 @@ public class MovieDTO {
 	private String releaseDate; //개봉일
 	private String raiting; //평점
 	private String director; //감독
+	private String images; //이미지
 	
+	public String getImages() {
+		return images;
+	}
+	public void setImages(String images) {
+		this.images = images;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -50,8 +57,8 @@ public class MovieDTO {
 	}
 	@Override
 	public String toString() {
-		return "MovieDTO [bno=" + bno + ", title=" + title + ", genre=" + genre + ", releasDate=" + releaseDate
-				+ ", raiting=" + raiting + ", director=" + director + "]";
+		return "MovieDTO [bno=" + bno + ", title=" + title + ", genre=" + genre + ", releaseDate=" + releaseDate
+				+ ", raiting=" + raiting + ", director=" + director + ", images=" + images + "]";
 	}
 	
 	

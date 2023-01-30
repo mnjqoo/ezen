@@ -14,7 +14,6 @@
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="${contextPath}/resources/js/movieJs.js"></script>
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 		<script src="../../js/jquery-3.6.1.js"></script>
@@ -27,6 +26,8 @@
 		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<link href="${contextPath}/resources/css/default.css" rel="stylesheet" type="text/css">
+		<script src="${contextPath}/resources/js/movieJs.js"></script>
+		<script src="${contextPath}/resources/js/fileJs.js"></script>
 	</head>
 	<body>
 		<div class="container">

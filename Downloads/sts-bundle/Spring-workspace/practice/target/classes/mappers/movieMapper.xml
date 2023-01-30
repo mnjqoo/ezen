@@ -61,8 +61,8 @@
 	<!-- 게시글 등록하기 -->
 	<insert id="movieRegister" parameterType="com.practice.movie.dto.MovieDTO">
 		<![CDATA[
-		INSERT INTO movie_table (bno, title, genre_code, releaseDate, raiting, director)
-		SELECT IFNULL(MAX(bno), 0) + 1, #{title}, #{genre}, #{releaseDate}, #{raiting}, #{director}
+		INSERT INTO movie_table (bno, title, genre_code, releaseDate, raiting, director, images)
+		SELECT IFNULL(MAX(bno), 0) + 1, #{title}, #{genre}, #{releaseDate}, #{raiting}, #{director} , #{images}
 		FROM movie_table;
 		]]>
 	</insert>
@@ -80,7 +80,7 @@
 	<update id="movieUpdate" parameterType="com.practice.movie.dto.MovieDTO" >
 		<![CDATA[
 		UPDATE movie_table
-		SET title = #{title}, genre_code = #{genre}, releaseDate = #{releaseDate}, director = #{director}
+		SET title = #{title}, genre_code = #{genre}, releaseDate = #{releaseDate}, director = #{director}, images = #{images}
 		WHERE bno = #{bno};
 		]]>
 	</update>
