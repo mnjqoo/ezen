@@ -28,4 +28,18 @@ public class MovieDAOImpl implements MovieDAO {
 		return sqlSession.selectList(Namespace + ".seatList", movieID);
 	}
 
+	@Override
+	public int insertSeatID(int seatID) throws Exception {
+		logger.info("MovieDAOImpl의 insertSeatID 처리하기....");
+		
+		return sqlSession.insert(Namespace + ".insertSeat", seatID);
+	}
+
+	@Override
+	public int seatReservationCount() throws Exception {
+		logger.info("MovieDAOImpl의 seatReservationCount 불러오기....");
+		
+		return sqlSession.selectOne(Namespace + ".reserveCount");
+	}
+
 }

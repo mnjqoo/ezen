@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.edu.movie.dto.SeatDTO;
 import com.edu.movie.dto.SeatStatusDTO;
@@ -80,4 +82,28 @@ public class MovieController {
 		return "/movie/seatReservation";
 		
 	}
+	
+	//영화관 좌석 예약 처리
+	@ResponseBody
+	@RequestMapping(value="/seatReservation", method=RequestMethod.POST)
+	public int seatReservationOK(@RequestParam int seatID, Model model) throws Exception {
+		logger.info("MovieController의 seatReservationOK() 처리하기.... 좌석번호: " + seatID);
+		
+		if(movieService.insertSeatID(seatID) == 1) { //예약 처리 후 결과값을 모델에 담아서 보내준다.
+			
+			int reservedCount = movieService.seatReservationCount();
+			System.out.println("reservedCount: " + reservedCount);
+			int reserveOK = reservedCount;
+			int reserveNO = 200 - reservedCount;
+			model.addAttribute("reserveOK", reserveOK);
+			model.addAttribute("reserveNO", reserveNO);
+			
+			return 1;
+			
+		} else {
+			return 0;
+		}
+		
+	}
+
 }

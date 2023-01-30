@@ -25,6 +25,20 @@ public class MovieServiceImpl implements MovieService {
 		
 		return movieDAO.getSeatList(movieID);
 	}
+
+	@Override
+	public int insertSeatID(int seatID) throws Exception {
+		logger.info("MovieServiceImpl의 insertSeatID 처리하기...");
+
+		return movieDAO.insertSeatID(seatID);
+	}
+
+	@Override
+	public int seatReservationCount() throws Exception {
+		logger.info("MovieServiceImpl의 seatReservationCount 불러오기...");
+
+		return movieDAO.seatReservationCount();
+	}
 	
 	
 }

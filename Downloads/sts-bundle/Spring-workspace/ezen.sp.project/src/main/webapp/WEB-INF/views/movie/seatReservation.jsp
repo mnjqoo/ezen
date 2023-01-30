@@ -79,8 +79,46 @@
 		//빈 좌석을 클리갛면 예약 업무를 실행한다.
 		$(".seatNO").on("click", function() {
 			
+			//선택한 좌석의 인덱스값을 가져온다.
 			var idx = $(".seatNO").index(this);
-			alert(idx + "를 클릭하셨습니다.")
+			
+			//예약 확정 또는 취소 (seatNO중 idx번째의 value값)
+			if(!confirm("좌석" + $(".seatNO").eq(idx).val() + "번을 예약하시겠습니까? ")) { //취소일 경우
+				
+				alert("좌석 예약을 취소하셨습니다.");
+				
+			} else { //확인일 경우
+				
+				$.ajax({
+					url: "/movie/seatReservation",
+					type: "post",
+					dataType: "json",
+					data: {"seatID":$(".seatNO").eq(idx).val()},
+					success: function(data){
+						if(data == 1) {
+							alert("좌석이 예약되었습니다.");
+							
+							//location.href= "/movie/seatReservation?movieID=1";
+							
+							//예약이 완료된 좌석의 버튼 색상을 변경한다.
+							$(".seatNO").eq(idx).removeClass("btn-primary").addClass("btn-danger");
+							
+							//예약이 완료된 좌석의 버튼을 비활성화 한다.
+							$(".seatNO").eq(idx).attr("disabled", true);
+							
+							//좌석 수를 변경해준다.
+							$("#reserveNO").text(Number($("#reserveNO").text()) - 1);
+							$("#reserveOK").text(Number($("#reserveOK").text()) + 1);
+							
+						}
+					},
+					error: function(data){
+						alert("좌석 예약에 실패하였습니다.");
+					}
+					
+				});
+				
+			}
 			
 		});
 		
