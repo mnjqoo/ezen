@@ -1,0 +1,219 @@
+@charset "UTF-8";
+body {
+	min-height: 800px;
+	background-color: #CCC;
+}
+#mainContentBox {
+	margin-top: 100px;
+}
+.mainContentDiv {
+	min-height: 200px;
+	background-color: #FFF;
+	border-radius: 20px;
+	margin-bottom: 40px;
+}
+/* 메인 내용 Sec01 */
+#mainContentSec01 {
+	padding: 10px;
+}
+#mainContentSec01 img {
+	width: 300px;
+}
+.col-sm-7 > div {
+	margin: 60px 10px 10px 120px;
+}
+#mainHelloP {
+	font-size: 25px;
+}
+.col-sm-7 > div p {
+	font-size: 20px;
+}
+.col-sm-7 > div button {
+	border: none;
+	background-color: #17465a;
+	color: #FFF;
+	font-weight: 900;
+	margin-top: 10px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	display: inline-block;
+}
+#lookOrders {
+	background-color: #e8e8e8;
+	color: #000;
+	margin-left: 10px;
+}
+/* 메인 내용 Sec02-1 */
+#mainContentSec02 {
+	padding: 0;
+}
+#mainContentArticle {
+	padding: 20px;
+}
+#carouselTitle {
+	display: inline-block;
+	padding-left: 30px;
+	font-size: 17px;
+}
+.carousel-indicator {
+	float: right;
+	display: inline-block;
+}
+.carousel-indicator > * {
+	display: inline-block;
+	color: #5a5a5a;
+}
+.carousel-inner table {
+	width: 100%;
+}
+.carousel-inner td {
+	width: 33%;
+	padding: 5px;
+	text-align: center;
+}
+.carousel-inner td h5 {
+	color: #000;
+	font-weight: bold;
+}
+.carousel-inner td p {
+	color: #000;
+	margin-top: 10px;
+}
+.carousel-inner img {
+	width: 200px;
+	height: 140.5px;
+	object-fit: contain;
+}
+/* 메인 내용 Sec02-2 */
+#mainSec02-2 {
+	float: right;
+}
+#mainSec02-2 > div {
+	background-color: #17465a;
+	padding: 50px 40px;
+}
+#howToUseTable {
+	width: 100%;
+}
+#howToUseTable th {
+	width: 50%;
+	text-align: center;
+}
+#howToUseTable th p {
+	color: #FFF;
+	font-size: 20px;
+}
+#howToUseTable img {
+	width: 100%;
+}
+#howToUseTable td {
+	padding-top: 30px;
+	text-align: right;
+}
+#howToUseTable a {
+	color: #FFF;
+	font-size: 15px;
+	border-bottom: 1px solid #FFF;
+}
+/* 메인 내용 Sec03 */
+#mainContentSec03 {
+	padding: 20px;
+}
+#mainContentSec03 table {
+	width: 100%;
+}
+#mainContentSec03 table th {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000;
+}
+#mainTableFirstTd {
+	text-align: center;
+	width: 15%;
+	padding: 10px;
+}
+#mainTableFirstTd > a {
+	color: #000;
+	text-decoration: underline;
+	margin-bottom: 2px;
+}
+#mainTableFirstTd > p {
+	margin-top: 3px;
+	margin-bottom: 0px;
+	font-weight: bold;
+}
+.orderState01 {
+	background-color: #000;
+	color: #FFF;
+	font-weight: bold;
+	padding: 8px 10px;
+	width: 60%;
+	margin: 5px auto auto auto;
+	border-radius: 20px;
+}
+.orderState02 {
+	color: #25b74b;
+	font-weight: bold;
+	padding: 8px 10px;
+	width: 60%;
+	margin: 5px auto auto auto;
+	border-radius: 20px;
+	border: 1px solid #25b74b;
+}
+.orderState03 {
+	color: #25b74b;
+	font-weight: bold;
+	padding: 8px 10px;
+	width: 60%;
+	margin: 5px auto auto auto;
+	border-radius: 20px;
+	border: 1px solid #25b74b;
+}
+.orderState04 {
+	color: #CCC;
+	font-weight: bold;
+	padding: 8px 10px;
+	width: 60%;
+	margin: 5px auto auto auto;
+	border-radius: 20px;
+	border: 1px solid #CCC;
+}
+#mainTableSecondTd {
+	padding: 10px;
+}
+#deliverAskDate {
+	text-align: right;
+	margin: 0;
+}
+#deliveryLineFI {
+	margin-left: 3%;
+	display: inline-block;
+	color: #6d6d6e;
+	font-weight: 900;
+}
+#deliveryLineDiv {
+	border-top: 2px solid #858588;
+	width: 90%;
+	height: 7px;
+	display: inline-block;
+}
+#deliveryLineLI {
+	display: inline-block;
+	color: #6d6d6e;
+	font-weight: 900;
+}
+#mainTableAddress > div {
+	padding-top: 10px;
+	display: inline-block;
+}
+#deliverAskAdrress2 {
+	float: right;
+}
+#mainTableAddress > div p {
+	margin: 0;
+}
+.deliverAskAdrress-1 {
+	font-weight: 900;
+}
+#mainContentSec03 > table > tbody > tr {
+	border-bottom: 1px solid #ccc;
+}

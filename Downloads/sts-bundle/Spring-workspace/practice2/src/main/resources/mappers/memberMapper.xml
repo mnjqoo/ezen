@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.edu.member">
+
+	<!-- user_type에 따른 테이블 구분하는 조건 -->
+	<sql id="user_type_insert">
+		<if test="user_type == 'C'.toString()">
+				t_client VALUES (#{user_email}, #{user_pwd}, #{user_name}, #{user_phone}, 
+				#{user_birthdate}, now(), 'C')
+		</if>
+		<if test="user_type == 'D'.toString()">
+				t_driver (user_email, user_pwd, user_name, user_phone, user_birthdate, 
+				user_joindate, user_type, license_num, license_date, price_sum, order_count, 
+				rating_sum, rating_avg)
+				VALUES (#{user_email}, #{user_pwd}, #{user_name}, #{user_phone}, 
+				#{user_birthdate}, now(), 'D', #{license_num}, #{license_date}, 0, 0, 0, 0)
+		</if>
+	</sql>
+	<sql id="user_type_table">
+		<if test="user_type == 'C'.toString()">
+				t_client
+		</if>
+		<if test="user_type == 'D'.toString()">
+				t_driver
+		</if>
+	</sql>
+	<sql id="user_type_update">
+		<if test="user_type == 'C'.toString()">
+				t_client SET user_email = #{user_email}
+		</if>
+		<if test="user_type == 'D'.toString()">
+				t_driver SET user_email = #{user_email}
+		</if>
+	</sql>
+	
+	<!-- 이메일 중복확인 -->
+	<select id="emailCheck" parameterType="String" resultType="Integer">
+		<![CDATA[
+		SELECT
+		(SELECT COUNT(*) FROM t_client WHERE user_email = #{user_email}) +
+		(SELECT COUNT(*) FROM t_driver WHERE user_email = #{user_email})
+		]]>
+	</select>
+	
+	<!-- user_type에 따른 회원 가입 처리하기 -->
+	<insert id="register" parameterType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		INSERT INTO 
+		]]>
+		<include refid="user_type_insert"/>
+	</insert>
+	
+	<!-- 이미지 파일 이름 등록하기 -->
+	<update id="updateImage" parameterType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		UPDATE t_driver SET image = #{image} WHERE user_email = #{user_email}
+		]]>
+	</update>
+	
+	<!-- user_type에 따른 회원 정보 업데이트 하기 -->
+	<update id="update" parameterType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		UPDATE
+		]]>
+		<include refid="user_type_update"/>
+	</update>
+	
+	<!-- 이메일로 t_client에서 memberDTO객체 찾기 -->
+	<select id="getClientMemberDTOByEmail" parameterType="String" resultType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		SELECT * FROM t_client	WHERE user_email = #{email}
+		]]>		
+	</select>
+	
+	<!-- 이메일로 t_driver에서 memberDTO객체 찾기 -->
+	<select id="getDriverMemberDTOByEmail" parameterType="String" resultType="com.edu.member.dto.MemberDTO">
+		<![CDATA[
+		SELECT * FROM t_driver	WHERE user_email = #{email}
+		]]>		
+	</select>	
+</mapper>

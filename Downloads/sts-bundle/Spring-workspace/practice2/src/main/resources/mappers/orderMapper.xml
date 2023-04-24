@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.edu.order">
+
+	<!-- user_type에 따른 테이블 구분하는 조건 -->
+	<sql id="user_type_table">
+		<if test="user_type == 'C'.toString()">
+				t_client
+		</if>
+		<if test="user_type == 'D'.toString()">
+				t_driver
+		</if>
+	</sql>
+	<!-- user_type에 따른 이메일 구분하는 조건 -->
+	<sql id="user_type_email">
+		<if test="user_type == 'C'.toString()">
+				client_email
+		</if>
+		<if test="user_type == 'D'.toString()">
+				driver_email
+		</if>
+	</sql>
+	<!-- 검색 조건 -->
+	<sql id="searchType">
+		<if test="searchType != null">
+			<if test="searchType == 'd'.toString()">
+				AND departure_address1 LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'a'.toString()">
+				AND arrival_address1 LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 't'.toString()">
+				AND truck_type LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</if>
+	</sql>	
+	<!-- 정렬 조건 -->
+	<sql id="arrayType">
+		<if test="arrayType != null">
+			<if test="arrayType == 'r'.toString()">
+				ORDER BY order_date DESC
+			</if>
+			<if test="arrayType == 's'.toString()">
+				ORDER BY order_state DESC
+			</if>
+			<if test="arrayType == 'p'.toString()">
+				ORDER BY order_price DESC
+			</if>
+		</if>
+	</sql>
+	
+		
+	<!-- 결제 예정 금액 가져오기 -->
+	<select id="calcPrice" parameterType="HashMap" resultType="String">
+		<![CDATA[
+		SELECT charge FROM t_charge 
+		WHERE truck_type = #{truck_type} and distance = #{distance}
+		]]>
+	</select>
+	
+	<!-- 날짜에 해당하는 운송 건수 구하기 -->
+	<select id="orderDateCount" parameterType="String" resultType="Integer">
+		<![CDATA[
+		SELECT COUNT(*) FROM t_order WHERE order_date LIKE CONCAT('%', #{date}, '%')
+		]]>
+	</select>
+	
+	<!-- 가장 큰 운송 번호 + 1 구하기 -->
+	<select id="getMaxOrderNum" resultType="Long">
+		<![CDATA[
+		SELECT MAX(order_num) + 1 FROM t_order
+		]]>
+	</select>
+	
+	<!-- 운송 정보 등록하기 -->
+	<insert id="orderRegister" parameterType="com.edu.order.dto.OrderDTO">
+		<![CDATA[
+		INSERT INTO t_order
+		(order_num, client_email, order_date, departure_postnum, departure_address1,
+		departure_address2, arrival_postnum, arrival_address1, arrival_address2, order_memo,
+		distance, truck_type, order_price, order_state, review_YN)
+		
+		VALUES(#{order_num}, #{client_email}, now(), #{departure_postnum},
+		#{departure_address1}, #{departure_address2}, #{arrival_postnum}, #{arrival_address1},
+		#{arrival_address2}, #{order_memo}, #{distance}, #{truck_type}, #{order_price}, 
+		#{order_state}, #{review_YN})
+		]]>
+	</insert>
+	
+	<!-- 운송 정보 전체 리스트 가져오기 (+검색, 페이징) -->
+	<select id="getOrderList" parameterType="com.edu.common.criteria.SearchArrayCriteria" resultType="com.edu.order.dto.OrderDTO">
+		<![CDATA[
+		SELECT * FROM (
+		SELECT order_num, client_email, driver_email, order_date, departure_postnum, departure_address1,
+		departure_address2, arrival_postnum, arrival_address1, arrival_address2, order_memo, distance,
+		truck_type, order_price, estimated_time, arrived_time, order_state, review_YN,
+		ROW_NUMBER() OVER(
+		]]>
+		
+		<include refid="arrayType"/>
+		
+		<![CDATA[
+		) AS rNUM FROM t_order WHERE 1=1
+		]]>
+		
+		<include refid="searchType"/>
+		
+		<![CDATA[
+		) list
+		WHERE rNUM BETWEEN (#{perPageNum} * #{page} - 9) and (#{perPageNum} * #{page})
+		ORDER BY order_num DESC;
+		]]>
+	</select>
+	
+	<!-- 전체 리스트 건수 가져오기 -->
+	<select id="getTotalListCount" parameterType="com.edu.common.criteria.SearchArrayCriteria" resultType="Integer">
+		<![CDATA[
+		SELECT COUNT(*) FROM t_order;
+		]]>
+	</select>
+	
+	<!-- 운전 기사가 예약중인 건수 리스트 가져오기 -->
+	<select id="getDriverOrderList" parameterType="String" resultType="com.edu.order.dto.OrderDTO">
+		<![CDATA[
+		SELECT * FROM t_order WHERE driver_email = #{email}
+		]]>
+	</select>
+	
+	<!-- 운송 예약하기(운전자가) -->
+	<update id="bookOrder" parameterType="com.edu.order.dto.OrderDTO">
+		<![CDATA[
+		UPDATE t_order SET driver_email = #{driver_email}, estimated_time = #{estimated_time}, order_state = #{order_state}
+		WHERE order_num = #{order_num}
+		]]>
+	</update>
+	
+	<!-- 나의 운송 정보 리스트 가져오기 (+검색, 페이징) -->
+	<select id="myOrderList" parameterType="com.edu.common.criteria.OrderArrayCriteria" resultType="com.edu.order.dto.OrderDTO">
+		<![CDATA[
+		SELECT * FROM (
+		SELECT order_num, client_email, driver_email, order_date, departure_postnum, departure_address1,
+		departure_address2, arrival_postnum, arrival_address1, arrival_address2, order_memo, distance,
+		truck_type, order_price, estimated_time, arrived_time, order_state, review_YN,
+		ROW_NUMBER() OVER(
+		]]>
+		<include refid="arrayType"/>
+		<![CDATA[
+		) AS rNUM FROM t_order 
+		WHERE client_email = #{user_email} or driver_email = #{user_email}) list
+		WHERE rNUM BETWEEN (#{perPageNum} * #{page} - 9) and (#{perPageNum} * #{page})
+		ORDER BY order_num DESC;
+		]]>
+	</select>
+	
+	<!-- 나의 운송 리스트 건수 가져오기 -->
+	<select id="getMyListCount" parameterType="com.edu.common.criteria.OrderArrayCriteria" resultType="Integer">
+		<![CDATA[
+		SELECT COUNT(*) FROM t_order
+		WHERE client_email = #{user_email} or driver_email = #{user_email}
+		]]>
+	</select>
+		
+	<!-- 주문 번호에 해당하는 orderDTO 가져오기 -->
+	<select id="getOrderDTO" parameterType="Long" resultType="com.edu.order.dto.OrderDTO">
+		<![CDATA[
+		SELECT * FROM t_order WHERE order_num = #{order_num}
+		]]>
+	</select>
+	
+	<!-- 주문번호에 해당하는 order_state 업데이트 하기 -->
+	<update id="orderStateUpdate" parameterType="com.edu.order.dto.OrderDTO">
+		<![CDATA[
+		UPDATE t_order SET order_state = #{order_state}, arrived_time = #{arrived_time}
+		WHERE order_num = #{order_num}
+		]]>
+	</update>
+</mapper>

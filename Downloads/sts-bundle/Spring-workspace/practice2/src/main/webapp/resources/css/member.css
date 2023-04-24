@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/* 공통 */
+.container {
+	min-height: 640px;
+}
+/* login */
+#loginForm {
+	width: 300px;
+	margin-top: 200px;
+	color: #FFF;
+}
+#loginBox {
+	background-color: #627d89;
+	border: 1px solid #283c45;
+	border-radius: 10px;
+	padding: 20px;
+	margin-top: 20px;
+}
+.login_label {
+	margin-bottom: 3px;
+}
+#loginBox input {
+	padding: 5px;
+	width: 100%;
+	margin-bottom: 5px;
+	color: #000;
+}
+#loginBox button {
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	background-color: #17465a;
+	color: #FFF;
+	padding: 5px 0 5px 0;
+	margin: 10px 0 10px 0;
+}
+#login_register {
+	font-size: 12px;
+	text-align: center;
+}
+
+/* registerFrom */
+#registerForm {
+	margin: 150px auto auto auto;
+	width: 60%;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 30px;
+}
+.form-group {
+	position: relative;
+}
+.register_input {
+	position: relative;
+}
+.register_label {
+	font-size: 14px;
+	position: absolute;
+  	top: 3px;
+  	left: 20px;
+  	font-weight: 200;
+  	color: #5c6164;
+  	background-color: #FFF;
+  	padding: 4px 4px 0px 4px;
+}
+.form-group > span {
+	font-size: 12px;
+	padding: 15px;
+	color: #da0505;
+	visibility: hidden;
+}
+.driver_form {
+	display: none;
+}
+.driver_form > label {
+	margin-bottom: 10px;
+}
+input[type="file"] { 
+	display: none;
+}
+#uploadLicenseImage {
+	display: inline-block;
+	width: 40%;
+}
+#licenseImageLabel {
+	margin-left: 10px;
+	display: inline-block;
+	padding: 5px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+}
+.joinAgreeDiv > p {
+	display: inline-block;
+	margin-left: 5px;
+}
+.joinAgreeContentDiv {
+	padding: 10px;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	display: none;
+}
+#joinBtn {
+	background-color: #000;
+	color: #FFF;
+	height: 40px;
+	font-size: 17px;
+}
+/* 팝업창 관련 설정*/
+.popupBackground {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: -1; /* 기본적으로 숨긴다. */
+	opacity: 0;
+}
+.popupWindow {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.popupContent {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #ffffff;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+	/* 살짝 밑에서 위로 움직임을 주기 위한 초기 설정 */
+	transform: translate(-50%, -40%);
+}
+.show { /* 팝업을 나타나게 할 때 지정할 클래스의 css */
+	opacity: 1;
+	z-index: 1000;
+	transition: all .5s;
+}
+.show .popupContent { /* 나타날때 살짝 밑에서 위로의 움직임을 주기 위한 설정 */
+	transform: translate(-50%, -50%);
+	transition: all .5s;
+}
+
+/* 팝업창 내용 */
+#joinInfoTable {
+	margin: 80px 50px 50px 50px;
+	min-width: 650px;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+}
+#joinInfoTable td {
+	display: inline-block;	
+	padding: 5px;
+	width: 25%;
+}
+.joinInfoColorTd {
+	border-radius: 5px;
+	background-color: #f6f6f6;
+	text-align: center;
+}
+.popDriverTr {
+	display :none;
+}
+.popupContent p {
+	margin: 50px 50px 50px 50px;
+}
+.popupContent div {
+	margin: 30px 50px 50px 50px;
+	text-align: center;
+}
+.popupContent div button {
+	width: 20%;
+	display: inline-block;
+}
+#popJoinBtn {
+	background-color: #000;
+	color: #FFF;
+}

@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+/* navbar */
+nav {
+	padding: 15px 15px 5px 15px;
+	background-color: #FFF;
+}
+nav a {
+	color: #404344;
+}
+.nav_right li {
+	margin: 0 5px 0 5px;
+	font-size: 12px; 
+}
+nav div {
+	display: inline-block;
+}
+.nav_right {
+	float: right;
+}
+nav li {
+	display: inline-block;
+}
+
+/*footer*/
+#footer {
+	margin-top: 0px;
+	postion: fixed;
+	bottom: 0;
+	background-color: #e8eef0;
+	width: 100%;
+}
+
+/* home */
+.homeRow {
+	text-align: center;
+	width: 100%;
+	height: 600px;
+}
+#sec01 div {
+	display: inline-block;
+}
+.sec01_text {
+	padding-top: 180px; 
+}
+.button_start_now {
+	font-size: 13px; 
+	padding: 5px 25px 5px 25px; 
+	border-radius: 15px;
+	border: none;
+	background-color: #17465a;
+	color: #FFF;
+	margin-top: 20px;
+}
+.truck_home {
+	height: 300px; 
+	width: auto;
+	margin-top: -150px; 
+}
+#sec02 {
+	padding-top: 70px;
+	background-color: #17465a;
+	color: #FFF;
+}
+#sec02 img {
+	padding-top: 10px;
+	width: 400px; 
+	height: auto;
+}
+#sec03 {
+	height: 800px;
+	padding-top: 60px;
+}
+#sec03 div p {
+	font-size: 13px;
+}
+#sec03 div div {
+	display: inline-block;
+	margin: 40px 20px 50px 20px;
+	border: 1px solid #17465a;  
+	border-radius: 5px;
+	padding: 5px 20px 5px 20px; 
+}
+#sec03 h5 {
+	font-weight: bold;
+}
+#sec03 p {
+	font-size: 10px;
+}
+#sec03 img {
+	height: 400px;
+	width: auto;
+}
+#sec04 {
+	background-color: #17465a;
+	color: #FFF;
+	padding-top: 60px;
+}
+.sec04_brand_box {
+	background-color: #c6cbcd;
+	color: #000;
+	height: 200px;
+	margin-top: 20px;
+}
+.sec04_img {
+	height: 50px;
+	width: 100px;
+	border: 1px solid #000;
+	margin: 20px;
+}
+#sec05 table {
+	width: 70%;
+	margin: 50px auto;
+}
+#sec05 table th {
+	font-size: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;	
+}
+#sec05 table td {
+	text-align: center;
+	padding-top: 30px;
+}
+#sec05 table td a {
+	color: #000;
+}
+#sec05 table td a:hover {
+	text-decoration: none;
+}
+#sec05 table td a span {
+	font-size: 40px;
+}
+.sec05SpanCaption {
+	font-weight: 900;
+	margin-top: 10px;
+}
+.sec05AP {
+	margin: 0;
+	color: #666667;
+}
+/* 요금안내 */
+#truciChargeDivBox {
+	min-height: 640px;
+	margin: 180px auto auto auto;
+	width: 90%;
+}
+#truciChargeDivBox div p {
+	display: inline-block;
+	color: #7e7e7e;
+}
+#measureRight {
+	float: right;
+}
+#truciChargeDivBox table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+#truciChargeDivBox table thead tr {
+	border-radius: 20px;
+}
+#truciChargeDivBox table th {
+	width: 20%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #dedede;
+	color: #666666;
+	text-align: center;
+}
+#truciChargeDivBox table td {
+	padding-top: 10px;
+	padding-bottom: 10px;	
+	color: #666666;
+	text-align: center;
+}

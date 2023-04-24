@@ -30,7 +30,7 @@ let file = null;
  	
  		//전달받은 file을 FormData에 넣는다.
  		formData.append("file", file);
- 		alert("formData:" + formData.get("file").name);
+ 		//alert("formData:" + formData.get("file").name);
  		
  	}
  	
